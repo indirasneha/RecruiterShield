@@ -1,0 +1,41 @@
+# Python environments and generated interpreter/test caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+*.py[cod]
+
+# Frontend dependencies and generated Next.js output
+**/node_modules/
+**/.next/
+**/.npm-cache/
+
+# Local environment files. Keep sanitized example templates in source control.
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!.env.*.example
+!*.env.example
+
+# Local logs, temporary working files, and upload staging areas
+*.log
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+*.bak
+**/tmp_uploads/
+**/temp_uploads/
+**/local_uploads/
+
+# Common local IDE and operating-system metadata
+.idea/
+.vscode/*.log
+.vscode/*.tmp
+.DS_Store
+Thumbs.db

@@ -1,0 +1,83 @@
+{
+  "model": "word+character TF-IDF / balanced LogisticRegression",
+  "sklearn_version": "1.9.1",
+  "train_size": 120,
+  "heldout_size": 60,
+  "train_class_counts": {
+    "LOW": 40,
+    "MEDIUM": 40,
+    "HIGH": 40
+  },
+  "heldout_class_counts": {
+    "LOW": 20,
+    "MEDIUM": 20,
+    "HIGH": 20
+  },
+  "heldout_accuracy": 0.8166666666666667,
+  "heldout_macro_precision": 0.822053872053872,
+  "heldout_macro_recall": 0.8166666666666668,
+  "heldout_macro_f1": 0.8180033416875522,
+  "confusion_matrix_labels_order": [
+    "LOW",
+    "MEDIUM",
+    "HIGH"
+  ],
+  "confusion_matrix_rows_actual_columns_predicted": [
+    [
+      16,
+      3,
+      1
+    ],
+    [
+      2,
+      16,
+      2
+    ],
+    [
+      0,
+      3,
+      17
+    ]
+  ],
+  "classification_report": {
+    "LOW": {
+      "precision": 0.8888888888888888,
+      "recall": 0.8,
+      "f1-score": 0.8421052631578947,
+      "support": 20.0
+    },
+    "MEDIUM": {
+      "precision": 0.7272727272727273,
+      "recall": 0.8,
+      "f1-score": 0.7619047619047619,
+      "support": 20.0
+    },
+    "HIGH": {
+      "precision": 0.85,
+      "recall": 0.85,
+      "f1-score": 0.85,
+      "support": 20.0
+    },
+    "accuracy": 0.8166666666666667,
+    "macro avg": {
+      "precision": 0.822053872053872,
+      "recall": 0.8166666666666668,
+      "f1-score": 0.8180033416875522,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 0.822053872053872,
+      "recall": 0.8166666666666667,
+      "f1-score": 0.8180033416875522,
+      "support": 60.0
+    }
+  },
+  "binary_risk_screening": {
+    "positive_definition": "MEDIUM or HIGH",
+    "negative_definition": "LOW",
+    "false_positives": 4,
+    "false_negatives": 2
+  },
+  "split_method": "Deterministic scenario-family split: 8 of 12 families per class for training, 4 held out; exact duplicates, shared families, and text pairs with SequenceMatcher similarity >= .82 are rejected across splits.",
+  "probabilities_used_for_decision": false
+}

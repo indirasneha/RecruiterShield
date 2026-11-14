@@ -1,0 +1,34 @@
+risk_label,text
+LOW,A recruiter asks for my resume and a public portfolio before an interview.
+LOW,Please choose an interview time by tomorrow afternoon using the calendar link.
+LOW,Applications close next month on the date shown on the careers page.
+LOW,"After accepting the written offer, upload your passport using the secure employee portal."
+LOW,The official payroll tool requests bank details after contract acceptance.
+LOW,We do not request identity documents during initial screening.
+LOW,The panel selected you after three interviews and a technical exercise.
+LOW,No application fee is charged and there is no equipment deposit.
+LOW,Please confirm today's interview by 4 pm so the room can be reserved.
+LOW,Your background check begins after you sign the offer in the candidate portal.
+MEDIUM,A recruiter asks for a PAN image before the first interview through an unknown form.
+MEDIUM,Your profile is shortlisted without a conversation; please verify the opening first.
+MEDIUM,The sender asks you to keep the role private until more details are shared.
+MEDIUM,"Please confirm interest within two hours, before the company details are provided."
+MEDIUM,A recruiter says selection is nearly guaranteed before any assessment.
+MEDIUM,The message asks for personal details before naming the employer.
+MEDIUM,"The offer may be withdrawn soon, but no document or payment is requested."
+MEDIUM,A recruiter delays sharing the public job description until after your response.
+MEDIUM,An identity check is requested early and there is no official portal link.
+MEDIUM,The sender moves the application to a private chat without a listed vacancy.
+HIGH,Please send your one-time code to activate the candidate account.
+HIGH,Pay the mandatory interview deposit before the appointment can be confirmed.
+HIGH,Upload your Aadhaar now or the offer will be canceled this evening.
+HIGH,Share your bank account and card details before the interview.
+HIGH,Send your password and keep this request secret from the company.
+HIGH,The processing fee is due in one hour; do not call HR to verify.
+HIGH,Reply with the verification code before your account is closed.
+HIGH,Provide your PAN document privately to reserve the role today.
+HIGH,The job is guaranteed without an interview after you transfer the training fee.
+HIGH,Share a passport scan and bank details before we release your offer.
+LOW,"After signing the employment contract, complete identity setup in the official secure employee portal."
+MEDIUM,"The official secure portal is ready after acceptance. Before your first interview, send your Aadhaar through this private chat."
+HIGH,"After the contract is signed, send bank details by private chat before the interview or lose the offer."

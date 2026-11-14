@@ -1,0 +1,61 @@
+text,label,family
+Check that recruiter messages come from the domain published on the employer's official careers page.,LOW,low_verification_guidance
+You can verify this vacancy by navigating to the company's website yourself and searching its open roles.,LOW,low_verification_guidance
+"If you are unsure whether a message is genuine, contact the recruiting office using the phone number on its official site.",LOW,low_verification_guidance
+Our careers portal lists every current opening. Search there rather than relying on an unsolicited link.,LOW,low_verification_guidance
+The hiring team can confirm interview details through the contact page linked from the employer's main website.,LOW,low_verification_guidance
+The interviewer needs to move your meeting by one day. Please use the calendar invitation to choose another available slot.,LOW,low_reschedule
+We need to reschedule your interview. Reply with a couple of times that work for you later this week.,LOW,low_reschedule
+"A panel member is unavailable, so we have moved the discussion to the time shown in your updated calendar invite.",LOW,low_reschedule
+"Could we shift your interview to Monday morning? If that does not work, suggest another convenient time.",LOW,low_reschedule
+Your call has been moved to the following week. The recruiter will send a revised meeting invitation.,LOW,low_reschedule
+Thank you for applying. This is an automatic acknowledgement and no action is needed until we contact you.,LOW,low_application_acknowledgement
+We have received your application successfully. You can view its status by signing in to the candidate portal.,LOW,low_application_acknowledgement
+Your submission is complete. The recruiting team will review it and get in touch about any next steps.,LOW,low_application_acknowledgement
+Application received. Please allow the hiring team time to assess the materials before following up.,LOW,low_application_acknowledgement
+The portal has recorded your application. A confirmation is available in your candidate account.,LOW,low_application_acknowledgement
+"For your interview, think about a project you enjoyed and how you approached a challenge on the team.",LOW,low_interview_preparation
+The panel will ask about your experience and interests. You may use examples from coursework or personal projects.,LOW,low_interview_preparation
+There is no test to purchase or prepare for. The first meeting is a conversation with the hiring team.,LOW,low_interview_preparation
+Please review the role description before the interview and prepare any questions you have about the position.,LOW,low_interview_preparation
+The recruiter has shared the interview agenda in your calendar invitation. Contact us if the link does not work.,LOW,low_interview_preparation
+The sender says the full hiring process can be completed in one brief chat and asks you to decide quickly.,MEDIUM,medium_compressed_process
+"An offer is described as nearly ready after one short message exchange, with no interview plan explained.",MEDIUM,medium_compressed_process
+The recruiter says there is no time for the normal selection stages and asks for a quick confirmation of interest.,MEDIUM,medium_compressed_process
+A message describes instant onboarding but leaves the job duties and reporting manager unspecified.,MEDIUM,medium_compressed_process
+The sender promises a fast selection route and asks you to reply today before the vacancy is publicly posted.,MEDIUM,medium_compressed_process
+A recruiter mentions a refundable onboarding deposit but has not explained the employer's normal hiring process.,MEDIUM,medium_unclear_fee_language
+The message refers to a possible training charge and asks you to get clarification before continuing.,MEDIUM,medium_unclear_fee_language
+An unclear note says some candidates cover setup costs. Verify the policy directly with the employer before replying.,MEDIUM,medium_unclear_fee_language
+The sender discusses a security amount in passing but does not yet provide a payment request or official role details.,MEDIUM,medium_unclear_fee_language
+A vague onboarding note refers to costs that may apply. Ask the employer's official HR channel to explain in writing.,MEDIUM,medium_unclear_fee_language
+The message claims the interview is optional and says a decision may be made from your profile alone.,MEDIUM,medium_odd_selection_detail
+"A sender says you are effectively selected, but offers no details about the interview or assessment stage.",MEDIUM,medium_odd_selection_detail
+The recruiter says the team can skip its usual interviews for your application without explaining why.,MEDIUM,medium_odd_selection_detail
+An invitation describes a guaranteed place before the hiring panel has spoken with candidates.,MEDIUM,medium_odd_selection_detail
+You are told that selection is almost certain despite no discussion with the hiring team.,MEDIUM,medium_odd_selection_detail
+The recruiter says official details will be available later and asks you to continue the conversation in the meantime.,MEDIUM,medium_verification_delay
+A message asks you to wait before checking the company website because the role is not listed there yet.,MEDIUM,medium_verification_delay
+The sender promises a public job description after you have confirmed interest in the offer.,MEDIUM,medium_verification_delay
+A recruiter says the company cannot confirm the position through its main number until a later date.,MEDIUM,medium_verification_delay
+The message delays sharing the employer's official contact details until after an initial response.,MEDIUM,medium_verification_delay
+Upload your government ID and bank statement to this private form before the recruiter arranges an interview.,HIGH,high_identity_financial_combo
+The sender asks for a passport scan together with your account number to prepare a job offer.,HIGH,high_identity_financial_combo
+Provide your PAN details and debit card number through chat for candidate verification.,HIGH,high_identity_financial_combo
+Share your identity document and bank information immediately; do not wait for the official portal.,HIGH,high_identity_financial_combo
+The recruiter wants your national ID and UPI details by message before the selection process is complete.,HIGH,high_identity_financial_combo
+Your offer will be canceled unless you pay the training deposit in the next two hours.,HIGH,high_threatened_offer
+Send a photo of your identity document now or you will forfeit the selected position.,HIGH,high_threatened_offer
+The recruiter says your job offer will be withdrawn unless you share the one-time code immediately.,HIGH,high_threatened_offer
+Provide the requested bank details by tonight or the company will cancel your appointment letter.,HIGH,high_threatened_offer
+A sender threatens to revoke your internship if you do not transfer the processing fee today.,HIGH,high_threatened_offer
+You are selected without an interview. Pay the refundable security amount today to confirm your position.,HIGH,high_fake_interview_payment
+The recruiter guarantees a job without an assessment but requires an upfront registration payment.,HIGH,high_fake_interview_payment
+A message promises instant selection with no interview and asks for a training deposit before sharing the contract.,HIGH,high_fake_interview_payment
+"Your position is guaranteed without speaking to the team, once you send the processing fee now.",HIGH,high_fake_interview_payment
+The sender claims you passed without an interview and demands payment before giving any employer details.,HIGH,high_fake_interview_payment
+Send the OTP to this recruiter and do not contact the company help desk while your account is being verified.,HIGH,high_credential_secrecy
+Share your password privately; the agent says not to tell HR because this is a confidential hiring step.,HIGH,high_credential_secrecy
+Reply with the login code and keep the request secret from the company's recruitment staff.,HIGH,high_credential_secrecy
+The sender requests your account recovery code and warns that contacting the employer will cancel selection.,HIGH,high_credential_secrecy
+Provide your one-time passcode immediately. The message says not to discuss this verification with anyone.,HIGH,high_credential_secrecy

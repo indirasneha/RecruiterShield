@@ -1,0 +1,121 @@
+text,label,family
+Thanks for applying. Please email your resume and a link to your portfolio so our recruiting team can review your experience.,LOW,low_resume_request
+We received your application. Could you share an up-to-date CV and a public work sample before we arrange a conversation?,LOW,low_resume_request
+The hiring team would like to read your resume and see a few projects from your portfolio.,LOW,low_resume_request
+Please attach your CV to the application thread; a recruiter will follow up if your background fits the role.,LOW,low_resume_request
+"To help us review your application, send your resume and any public portfolio links you would like us to consider.",LOW,low_resume_request
+Would Tuesday or Thursday suit you for a 30-minute video interview with the engineering team? Let us know what works.,LOW,low_interview_schedule
+We would like to schedule an interview next week. Please share two time windows when you are available.,LOW,low_interview_schedule
+Your application has moved to the interview stage. Choose a convenient slot from the calendar on our careers page.,LOW,low_interview_schedule
+"Can you meet the hiring panel on Friday afternoon? If not, suggest another time that fits your schedule.",LOW,low_interview_schedule
+The recruiter is available for a short introductory call next week. Reply with your preferred day and time.,LOW,low_interview_schedule
+Your application is under review. We expect to update candidates about the next stage by the end of next month.,LOW,low_application_update
+We have received your materials and will contact shortlisted applicants after the review period closes.,LOW,low_application_update
+The team is still reviewing applications. You can check the status through the careers portal at any time.,LOW,low_application_update
+"Thanks for your interest. The hiring process has several stages, and we will send an update when the first review is complete.",LOW,low_application_update
+Your application is in the queue for review. There is no need to respond until the recruiting team contacts you.,LOW,low_application_update
+Please bring a copy of your resume to the interview so the panel can discuss your projects and experience.,LOW,low_resume_interview_context
+"Before our video conversation, review the role description and have your portfolio ready if you want to share it.",LOW,low_resume_interview_context
+The first interview is a discussion about your experience. No documents are needed beyond the resume already in your application.,LOW,low_resume_interview_context
+We look forward to meeting you. The interview will cover the role and leave time for your questions.,LOW,low_resume_interview_context
+Your interview is confirmed. A calendar invitation will arrive from the company's recruiting system.,LOW,low_resume_interview_context
+There is no application fee for this position. Our recruiters will never ask for a password or one-time code.,LOW,low_no_fee_and_safety
+Applying and interviewing are free. Please do not pay anyone who claims they can secure this role for you.,LOW,low_no_fee_and_safety
+"For your security, we do not request OTPs or account passwords during recruitment. Contact the careers team with questions.",LOW,low_no_fee_and_safety
+You do not need to buy training or equipment to apply. Any later onboarding steps will come through the official portal.,LOW,low_no_fee_and_safety
+Our recruitment process does not involve candidate payments. Check the careers page if you need to confirm this notice.,LOW,low_no_fee_and_safety
+"The internship is hybrid, runs for twelve weeks, and includes a monthly stipend. Interviews begin after the application window.",LOW,low_job_details
+This role is based in the design group and has a paid training period. The full job description is on our careers site.,LOW,low_job_details
+The position is a summer placement with a fixed term. Review the requirements and apply through the official job page.,LOW,low_job_details
+The team works from the campus office three days per week. Compensation and responsibilities are listed in the posting.,LOW,low_job_details
+The internship includes mentorship and a project review. You can ask the recruiter about the schedule during your interview.,LOW,low_job_details
+Applications close on the date shown on the careers page. Please submit your resume there if you would like to be considered.,LOW,low_ordinary_deadline
+The role remains open through the posted deadline. The application form accepts updates until that date.,LOW,low_ordinary_deadline
+Please apply before the listed closing date so the hiring panel can include your materials in its review.,LOW,low_ordinary_deadline
+The job posting shows the application deadline and required experience. There is no need to contact the recruiter urgently.,LOW,low_ordinary_deadline
+We will review applications after the advertised closing date and reach out to selected candidates.,LOW,low_ordinary_deadline
+"After two interviews and a technical exercise, the panel has selected you for the next stage of the process.",LOW,low_normal_selection
+The hiring team would like to invite you to a second interview after reviewing your resume and initial discussion.,LOW,low_normal_selection
+Your interview went well. The team will complete reference checks before making a final decision.,LOW,low_normal_selection
+You have advanced to the assessment stage. Instructions will be available in your candidate portal.,LOW,low_normal_selection
+"Following the panel interview, we would like to discuss the role and answer your questions in a final meeting.",LOW,low_normal_selection
+Your profile was selected before an interview. Please confirm that you are still interested so we can explain the next step.,MEDIUM,medium_unusually_fast_selection
+We have shortlisted your application unusually quickly and would like to arrange a call to discuss the role and process.,MEDIUM,medium_unusually_fast_selection
+"A recruiter says you are preselected, although no interview has taken place. Ask for the official job posting before proceeding.",MEDIUM,medium_unusually_fast_selection
+You have been marked as a preferred candidate before meeting the team. We can provide more details about the selection process.,MEDIUM,medium_unusually_fast_selection
+The message says your application passed initial review in minutes. Verify the opening through the employer's careers site.,MEDIUM,medium_unusually_fast_selection
+Please confirm your interest by this evening so we can keep your application in the current review group.,MEDIUM,medium_soft_deadline
+"The recruiter asks for a reply within a few hours, though no sensitive information or payment is requested.",MEDIUM,medium_soft_deadline
+We are moving quickly and would appreciate an answer today about whether you want to continue the conversation.,MEDIUM,medium_soft_deadline
+A message requests confirmation before tomorrow morning to reserve an interview slot. Check with the official recruiting team.,MEDIUM,medium_soft_deadline
+The sender says the shortlist closes tonight and asks you to respond soon about your availability.,MEDIUM,medium_soft_deadline
+The recruiter wants to move the conversation to a personal messaging account before sharing the full job description.,MEDIUM,medium_personal_channel
+We can discuss the internship on a messaging app. The sender has not provided an official careers page for the vacancy.,MEDIUM,medium_personal_channel
+"A contact says to continue by chat on a personal account, while the company role is not linked in the message.",MEDIUM,medium_personal_channel
+The sender asks you to message a private account to receive more information about an unnamed opening.,MEDIUM,medium_personal_channel
+"Before arranging an interview, the recruiter suggests a personal chat and gives no company contact page.",MEDIUM,medium_personal_channel
+The recruiter says the company site is being updated and asks you to rely on this message for the role details.,MEDIUM,medium_limited_verification
+A sender describes an opening but does not share a job listing or a way to contact the employer's recruiting office.,MEDIUM,medium_limited_verification
+The message says the vacancy is confidential and gives only a brief title. Ask for a public role description.,MEDIUM,medium_limited_verification
+A recruiter claims to represent a large employer but provides no official profile or careers link to confirm the opening.,MEDIUM,medium_limited_verification
+The sender asks you to trust their selection note while details of the interview and team remain unclear.,MEDIUM,medium_limited_verification
+"Before the first interview, the recruiter asks you to upload an identity document to an unconfirmed form.",MEDIUM,medium_identity_early_request
+"A message requests a scan of your PAN card at the application stage, without linking to a verified employer portal.",MEDIUM,medium_identity_early_request
+The sender asks for an Aadhaar copy before explaining the role or arranging a conversation.,MEDIUM,medium_identity_early_request
+An identity document is requested during initial screening. Confirm the employer and secure process before sharing it.,MEDIUM,medium_identity_early_request
+The recruiter wants an ID image before any interview has been scheduled. Verify the request independently first.,MEDIUM,medium_identity_early_request
+The sender asks you not to contact the company office until they have finished reviewing your application.,MEDIUM,medium_secrecy_nudge
+Please keep this recruitment conversation private and do not ask the main HR team about the opening yet.,MEDIUM,medium_secrecy_nudge
+A recruiter tells you not to discuss the role with other company staff before receiving more details.,MEDIUM,medium_secrecy_nudge
+The message asks you to wait before contacting the listed employer because the vacancy is supposedly sensitive.,MEDIUM,medium_secrecy_nudge
+You are asked to keep the selection notice to yourself while the sender prepares a formal explanation.,MEDIUM,medium_secrecy_nudge
+"A recruiter says you have been chosen for a remote role but has not provided duties, team details, or an interview plan.",MEDIUM,medium_vague_job_claim
+"The message promises an internship after a short chat, but the employer and responsibilities are not clearly named.",MEDIUM,medium_vague_job_claim
+A sender says your application is approved for a role that is not described in a public job listing.,MEDIUM,medium_vague_job_claim
+"You are told that a position is reserved for you, though the message gives few details about the work.",MEDIUM,medium_vague_job_claim
+The recruiter claims the role is ready for you but has not explained the selection stages or reporting team.,MEDIUM,medium_vague_job_claim
+The recruiter asks for your full date of birth and home address before sharing an interview invitation.,MEDIUM,medium_document_before_offer
+An early screening message asks for personal profile details that do not appear necessary to schedule a first interview.,MEDIUM,medium_document_before_offer
+"Before an interview, the sender wants additional personal details through a form that is not on the company website.",MEDIUM,medium_document_before_offer
+The recruiter asks for your complete residential details before telling you which team owns the role.,MEDIUM,medium_document_before_offer
+A candidate form requests extra personal information at the initial contact stage. Confirm who controls the form first.,MEDIUM,medium_document_before_offer
+"To reserve this internship, send a photo of your Aadhaar card before the interview. The offer expires tonight.",HIGH,high_aadhaar_pan_harvest
+Upload your PAN card now to keep the job offer active; the recruiter says the selection will be canceled if you wait.,HIGH,high_aadhaar_pan_harvest
+We need your national identity document by message today to release the appointment letter.,HIGH,high_aadhaar_pan_harvest
+The sender requests a passport scan before any interview and says not to contact the company office.,HIGH,high_aadhaar_pan_harvest
+Share your government ID number immediately or your place on the hiring list will be withdrawn.,HIGH,high_aadhaar_pan_harvest
+Send your bank account number and IFSC code to this recruiter before the first interview to confirm your stipend.,HIGH,high_bank_detail_harvest
+The sender asks for a bank statement and account details by chat to activate a job application.,HIGH,high_bank_detail_harvest
+Provide your debit card information now so payroll can reserve your internship payment.,HIGH,high_bank_detail_harvest
+"To process selection, send your account number and UPI ID to the recruiter through this private message.",HIGH,high_bank_detail_harvest
+"The message requests routing and bank details before an offer is signed, and pressures you to reply today.",HIGH,high_bank_detail_harvest
+Pay a refundable registration fee today to secure your interview slot; the offer may be canceled if you delay.,HIGH,high_candidate_fee
+Transfer the processing deposit before the recruiter releases your appointment letter.,HIGH,high_candidate_fee
+A training fee is mandatory before you can start this internship. Send the money to the recruiter now.,HIGH,high_candidate_fee
+Pay the security deposit by tonight to keep your selection active. Do not call the company office about this fee.,HIGH,high_candidate_fee
+The sender demands an onboarding charge before any interview and says the vacancy closes within hours.,HIGH,high_candidate_fee
+Send the OTP from your phone to the recruiter so they can verify your candidate account.,HIGH,high_otp_password
+Reply with your password and one-time sign-in code to confirm your identity for this job.,HIGH,high_otp_password
+The recruiter says they need the verification code sent to your account to release the offer.,HIGH,high_otp_password
+Share your login credentials in this chat so the hiring agent can finish your application.,HIGH,high_otp_password
+Text the account recovery code to the recruiter immediately to keep your profile active.,HIGH,high_otp_password
+Send your Aadhaar scan today and do not contact HR; the offer will be withdrawn if you tell anyone.,HIGH,high_id_secrecy_pressure
+The sender asks for a passport image by private chat and says the company must not be contacted.,HIGH,high_id_secrecy_pressure
+Upload your PAN card before midnight. Keep this request secret from the employer's recruiting office.,HIGH,high_id_secrecy_pressure
+Provide your national ID number now or your offer will be canceled; do not ask the main HR team.,HIGH,high_id_secrecy_pressure
+A recruiter demands your identity card and warns you not to verify the selection with anyone at the company.,HIGH,high_id_secrecy_pressure
+Pay the placement fee within one hour and do not call the listed employer to confirm this instruction.,HIGH,high_fee_secrecy_urgency
+Send the processing money now. Keep the payment request private or the offer will be canceled.,HIGH,high_fee_secrecy_urgency
+The sender demands a deposit today and tells you not to discuss it with the company's HR staff.,HIGH,high_fee_secrecy_urgency
+Transfer the registration charge before midnight; the recruiter says outside confirmation will cost you the role.,HIGH,high_fee_secrecy_urgency
+You must pay an interview fee immediately and keep the request secret from other company employees.,HIGH,high_fee_secrecy_urgency
+Provide your bank account details within an hour or the recruiter will cancel your selected position.,HIGH,high_bank_cancel_threat
+The sender threatens to withdraw the offer unless you send your account number and card details today.,HIGH,high_bank_cancel_threat
+Share the UPI and bank information now to prevent your internship place from being forfeited.,HIGH,high_bank_cancel_threat
+The offer will be revoked unless you provide bank details through this unverified message before noon.,HIGH,high_bank_cancel_threat
+A recruiter says payroll needs your account credentials immediately or you will lose the job.,HIGH,high_bank_cancel_threat
+Pay the verification charge and send the OTP from your phone so the recruiter can activate your account.,HIGH,high_credential_fee_combo
+The agent requests a password and processing fee to complete selection before the deadline tonight.,HIGH,high_credential_fee_combo
+Send money and your account recovery code now; the sender says this is required to release the offer.,HIGH,high_credential_fee_combo
+"To confirm the interview, pay a security charge and reply with the one-time code you just received.",HIGH,high_credential_fee_combo
+The message combines an upfront recruitment payment with a request for your login password.,HIGH,high_credential_fee_combo
