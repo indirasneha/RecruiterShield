@@ -1,0 +1,938 @@
+{
+  "tag": "before",
+  "training_or_threshold_tuning_performed": false,
+  "model_artifact": "app\\ml\\artifacts\\recruitment_classifier.joblib",
+  "label_order": [
+    "LOW",
+    "MEDIUM",
+    "HIGH"
+  ],
+  "datasets": {
+    "original_heldout": {
+      "source": "data\\test.csv",
+      "classifier_only": {
+        "examples": 60,
+        "accuracy": 0.8166666666666667,
+        "macro_precision": 0.822053872053872,
+        "macro_recall": 0.8166666666666668,
+        "macro_f1": 0.8180033416875522,
+        "per_class": {
+          "LOW": {
+            "precision": 0.8888888888888888,
+            "recall": 0.8,
+            "f1": 0.8421052631578947,
+            "support": 20
+          },
+          "MEDIUM": {
+            "precision": 0.7272727272727273,
+            "recall": 0.8,
+            "f1": 0.7619047619047619,
+            "support": 20
+          },
+          "HIGH": {
+            "precision": 0.85,
+            "recall": 0.85,
+            "f1": 0.85,
+            "support": 20
+          }
+        },
+        "labels_order": [
+          "LOW",
+          "MEDIUM",
+          "HIGH"
+        ],
+        "confusion_matrix_rows_actual_columns_predicted": [
+          [
+            16,
+            3,
+            1
+          ],
+          [
+            2,
+            16,
+            2
+          ],
+          [
+            0,
+            3,
+            17
+          ]
+        ],
+        "binary_risk_screen": {
+          "positive_definition": "MEDIUM or HIGH; negative is LOW",
+          "false_positive_rate": 0.2,
+          "false_negative_rate": 0.05,
+          "false_positives": 4,
+          "false_negatives": 2
+        },
+        "high_label_downgraded_to_low_or_medium": 3,
+        "LOW_label_incorrectly_classified_HIGH": 1
+      },
+      "complete_api_pipeline": {
+        "examples": 60,
+        "accuracy": 0.7333333333333333,
+        "macro_precision": 0.7615440115440114,
+        "macro_recall": 0.7333333333333333,
+        "macro_f1": 0.7368644427467957,
+        "per_class": {
+          "LOW": {
+            "precision": 0.7727272727272727,
+            "recall": 0.85,
+            "f1": 0.8095238095238095,
+            "support": 20
+          },
+          "MEDIUM": {
+            "precision": 0.5833333333333334,
+            "recall": 0.7,
+            "f1": 0.6363636363636364,
+            "support": 20
+          },
+          "HIGH": {
+            "precision": 0.9285714285714286,
+            "recall": 0.65,
+            "f1": 0.7647058823529411,
+            "support": 20
+          }
+        },
+        "labels_order": [
+          "LOW",
+          "MEDIUM",
+          "HIGH"
+        ],
+        "confusion_matrix_rows_actual_columns_predicted": [
+          [
+            17,
+            3,
+            0
+          ],
+          [
+            5,
+            14,
+            1
+          ],
+          [
+            0,
+            7,
+            13
+          ]
+        ],
+        "binary_risk_screen": {
+          "positive_definition": "MEDIUM or HIGH; negative is LOW",
+          "false_positive_rate": 0.15,
+          "false_negative_rate": 0.125,
+          "false_positives": 3,
+          "false_negatives": 5
+        },
+        "high_label_downgraded_to_low_or_medium": 7,
+        "LOW_label_incorrectly_classified_HIGH": 0
+      },
+      "analysis_type_values": [
+        "ai_hybrid"
+      ]
+    },
+    "phase3_challenge": {
+      "source": "data\\adversarial_challenge.csv",
+      "classifier_only": {
+        "examples": 60,
+        "accuracy": 0.8,
+        "macro_precision": 0.8146825396825396,
+        "macro_recall": 0.8444444444444444,
+        "macro_f1": 0.8067370537958772,
+        "per_class": {
+          "LOW": {
+            "precision": 0.9523809523809523,
+            "recall": 0.6666666666666666,
+            "f1": 0.7843137254901961,
+            "support": 30
+          },
+          "MEDIUM": {
+            "precision": 0.8666666666666667,
+            "recall": 0.8666666666666667,
+            "f1": 0.8666666666666667,
+            "support": 15
+          },
+          "HIGH": {
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693,
+            "support": 15
+          }
+        },
+        "labels_order": [
+          "LOW",
+          "MEDIUM",
+          "HIGH"
+        ],
+        "confusion_matrix_rows_actual_columns_predicted": [
+          [
+            20,
+            2,
+            8
+          ],
+          [
+            1,
+            13,
+            1
+          ],
+          [
+            0,
+            0,
+            15
+          ]
+        ],
+        "binary_risk_screen": {
+          "positive_definition": "MEDIUM or HIGH; negative is LOW",
+          "false_positive_rate": 0.3333333333333333,
+          "false_negative_rate": 0.03333333333333333,
+          "false_positives": 10,
+          "false_negatives": 1
+        },
+        "high_label_downgraded_to_low_or_medium": 0,
+        "LOW_label_incorrectly_classified_HIGH": 8,
+        "fraudulent_message_downgrades": 14,
+        "legitimate_message_classified_HIGH": 8
+      },
+      "complete_api_pipeline": {
+        "examples": 60,
+        "accuracy": 0.8166666666666667,
+        "macro_precision": 0.8135566188197768,
+        "macro_recall": 0.7888888888888889,
+        "macro_f1": 0.7917043740573152,
+        "per_class": {
+          "LOW": {
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1": 0.9,
+            "support": 30
+          },
+          "MEDIUM": {
+            "precision": 0.631578947368421,
+            "recall": 0.8,
+            "f1": 0.7058823529411765,
+            "support": 15
+          },
+          "HIGH": {
+            "precision": 0.9090909090909091,
+            "recall": 0.6666666666666666,
+            "f1": 0.7692307692307693,
+            "support": 15
+          }
+        },
+        "labels_order": [
+          "LOW",
+          "MEDIUM",
+          "HIGH"
+        ],
+        "confusion_matrix_rows_actual_columns_predicted": [
+          [
+            27,
+            2,
+            1
+          ],
+          [
+            3,
+            12,
+            0
+          ],
+          [
+            0,
+            5,
+            10
+          ]
+        ],
+        "binary_risk_screen": {
+          "positive_definition": "MEDIUM or HIGH; negative is LOW",
+          "false_positive_rate": 0.1,
+          "false_negative_rate": 0.1,
+          "false_positives": 3,
+          "false_negatives": 3
+        },
+        "high_label_downgraded_to_low_or_medium": 5,
+        "LOW_label_incorrectly_classified_HIGH": 1,
+        "fraudulent_message_downgrades": 20,
+        "legitimate_message_classified_HIGH": 1
+      },
+      "analysis_type_values": [
+        "ai_hybrid"
+      ]
+    },
+    "redteam": {
+      "source": "data\\redteam\\messages.csv",
+      "classifier_only": {
+        "examples": 100,
+        "accuracy": 0.65,
+        "macro_precision": 0.7219209196681037,
+        "macro_recall": 0.6651851851851852,
+        "macro_f1": 0.6518474739514929,
+        "per_class": {
+          "LOW": {
+            "precision": 0.44680851063829785,
+            "recall": 0.84,
+            "f1": 0.5833333333333334,
+            "support": 25
+          },
+          "MEDIUM": {
+            "precision": 0.9411764705882353,
+            "recall": 0.5333333333333333,
+            "f1": 0.6808510638297872,
+            "support": 30
+          },
+          "HIGH": {
+            "precision": 0.7777777777777778,
+            "recall": 0.6222222222222222,
+            "f1": 0.691358024691358,
+            "support": 45
+          }
+        },
+        "labels_order": [
+          "LOW",
+          "MEDIUM",
+          "HIGH"
+        ],
+        "confusion_matrix_rows_actual_columns_predicted": [
+          [
+            21,
+            0,
+            4
+          ],
+          [
+            10,
+            16,
+            4
+          ],
+          [
+            16,
+            1,
+            28
+          ]
+        ],
+        "binary_risk_screen": {
+          "positive_definition": "MEDIUM or HIGH; negative is LOW",
+          "false_positive_rate": 0.16,
+          "false_negative_rate": 0.3466666666666667,
+          "false_positives": 4,
+          "false_negatives": 26
+        },
+        "high_label_downgraded_to_low_or_medium": 17,
+        "LOW_label_incorrectly_classified_HIGH": 4,
+        "fraudulent_message_downgrades": 21,
+        "legitimate_message_classified_HIGH": null
+      },
+      "complete_api_pipeline": {
+        "examples": 100,
+        "accuracy": 0.45,
+        "macro_precision": 0.5368755383290268,
+        "macro_recall": 0.5207407407407407,
+        "macro_f1": 0.43345171655673936,
+        "per_class": {
+          "LOW": {
+            "precision": 0.4375,
+            "recall": 0.84,
+            "f1": 0.5753424657534246,
+            "support": 25
+          },
+          "MEDIUM": {
+            "precision": 0.3953488372093023,
+            "recall": 0.5666666666666667,
+            "f1": 0.4657534246575342,
+            "support": 30
+          },
+          "HIGH": {
+            "precision": 0.7777777777777778,
+            "recall": 0.15555555555555556,
+            "f1": 0.25925925925925924,
+            "support": 45
+          }
+        },
+        "labels_order": [
+          "LOW",
+          "MEDIUM",
+          "HIGH"
+        ],
+        "confusion_matrix_rows_actual_columns_predicted": [
+          [
+            21,
+            4,
+            0
+          ],
+          [
+            11,
+            17,
+            2
+          ],
+          [
+            16,
+            22,
+            7
+          ]
+        ],
+        "binary_risk_screen": {
+          "positive_definition": "MEDIUM or HIGH; negative is LOW",
+          "false_positive_rate": 0.16,
+          "false_negative_rate": 0.36,
+          "false_positives": 4,
+          "false_negatives": 27
+        },
+        "high_label_downgraded_to_low_or_medium": 38,
+        "LOW_label_incorrectly_classified_HIGH": 0,
+        "fraudulent_message_downgrades": 42,
+        "legitimate_message_classified_HIGH": null
+      },
+      "analysis_type_values": [
+        "ai_hybrid"
+      ]
+    }
+  },
+  "redteam_high_downgrade_traces": [
+    {
+      "id": "RT006",
+      "pattern": "identity_plus_pressure",
+      "message": "A seat opened in the graduate cohort. Send your Aadhaar copy by 6 pm or the offer packet will be reassigned to the next applicant.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [
+        {
+          "category": "Identity document request",
+          "severity": 2,
+          "evidence": "Send your Aadhaar",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+        }
+      ],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "single identity-document request is capped at MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: single identity-document request is capped at MEDIUM."
+    },
+    {
+      "id": "RT007",
+      "pattern": "identity_plus_secrecy",
+      "message": "The director has approved you directly. Keep this between us until Monday and message your PAN scan to my private number so HR does not slow the process.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT008",
+      "pattern": "identity_plus_pressure",
+      "message": "Your background check is almost complete; upload the passport page now. If the upload portal is inconvenient, reply with a photo and we will enter it for you.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [
+        {
+          "category": "Identity document request",
+          "severity": 2,
+          "evidence": "upload the passport",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+        }
+      ],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "single identity-document request is capped at MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned MEDIUM. Rule path: single identity-document request is capped at MEDIUM."
+    },
+    {
+      "id": "RT009",
+      "pattern": "identity_plus_secrecy",
+      "message": "The hiring list is confidential. Send your tax identification number here and please do not call the company switchboard while approvals are pending.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [
+        {
+          "category": "Secrecy or blocked verification",
+          "severity": 1,
+          "evidence": "please do not call the company",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine."
+        }
+      ],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "one active caution signal",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: one active caution signal."
+    },
+    {
+      "id": "RT010",
+      "pattern": "identity_plus_pressure",
+      "message": "We can hold the placement through tonight only. A picture of your government ID is needed to keep your name active in the system.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [
+        {
+          "category": "Identity document request",
+          "severity": 2,
+          "evidence": "government ID is needed",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+        }
+      ],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "single identity-document request is capped at MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: single identity-document request is capped at MEDIUM."
+    },
+    {
+      "id": "RT011",
+      "pattern": "credential_harvest",
+      "message": "The candidate portal sent a login code to your phone. Read the six digits back so I can connect your assessment to the correct application.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT013",
+      "pattern": "credential_harvest",
+      "message": "A secure sign-in prompt may arrive while we verify your profile. Forward the verification code as soon as it appears; it expires quickly.",
+      "expected_label": "HIGH",
+      "ml_prediction": "MEDIUM",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted MEDIUM and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT014",
+      "pattern": "credential_harvest",
+      "message": "To release the video interview room, reply with the number from your authenticator app. It only confirms that you are the candidate.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "broad benign-context or severity-zero override suppresses model-only risk",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned LOW. Rule path: broad benign-context or severity-zero override suppresses model-only risk."
+    },
+    {
+      "id": "RT017",
+      "pattern": "identity_plus_bank",
+      "message": "The stipend vendor needs your account number and a scan of your tax card before the final interview; otherwise it cannot calculate your package.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "broad benign-context or severity-zero override suppresses model-only risk",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned LOW. Rule path: broad benign-context or severity-zero override suppresses model-only risk."
+    },
+    {
+      "id": "RT018",
+      "pattern": "identity_plus_bank",
+      "message": "We selected you from the application list. Email a void cheque, national ID image, and your full birth date to this personal mailbox for verification.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [
+        {
+          "category": "Identity document request",
+          "severity": 2,
+          "evidence": "Email a void cheque, national ID",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+        }
+      ],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "single identity-document request is capped at MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned MEDIUM. Rule path: single identity-document request is capped at MEDIUM."
+    },
+    {
+      "id": "RT020",
+      "pattern": "identity_plus_bank",
+      "message": "The background partner cannot proceed without your passport number and bank routing details. Send them directly to me rather than using the company portal.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT021",
+      "pattern": "identity_plus_secrecy",
+      "message": "The CEO personally chose you, so there will be no usual interview. Text your Aadhaar number to this account and do not ask the careers team about the exception.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [
+        {
+          "category": "Identity document request",
+          "severity": 2,
+          "evidence": "Text your Aadhaar",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+        }
+      ],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "single identity-document request is capped at MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: single identity-document request is capped at MEDIUM."
+    },
+    {
+      "id": "RT022",
+      "pattern": "identity_plus_pressure",
+      "message": "Your assessment was excellent. To keep the appointment letter active, upload both sides of your PAN card before the countdown on the form reaches zero.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [
+        {
+          "category": "Identity document request",
+          "severity": 2,
+          "evidence": "upload both sides of your PAN card",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+        }
+      ],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "single identity-document request is capped at MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: single identity-document request is capped at MEDIUM."
+    },
+    {
+      "id": "RT024",
+      "pattern": "identity_plus_secrecy",
+      "message": "We are using an outside verifier for a confidential search. Send your licence number and a selfie with the card; please keep the search off your public application record.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT026",
+      "pattern": "training_purchase",
+      "message": "The position includes a required readiness module. Purchase the access voucher from our named training partner, then send the receipt to receive your start instructions.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT027",
+      "pattern": "equipment_reimbursement",
+      "message": "We ship laptops only after candidates buy the approved security suite from our supplier. Finance will reimburse it after your first month.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT028",
+      "pattern": "refundable_deposit",
+      "message": "Your desk is reserved once the refundable equipment bond clears. The amount returns with your first stipend, so there is no net cost to you.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT029",
+      "pattern": "training_purchase",
+      "message": "The internship is paid, though a short certification fee must be settled before the mentor can release the project brief.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT030",
+      "pattern": "third_party_payment",
+      "message": "An external credentialing office handles our fast-track intake. Pay its candidate processing invoice directly; the hiring team cannot reserve your slot until it is marked paid.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT031",
+      "pattern": "fee_disguised_as_admin",
+      "message": "There is no recruitment charge. The only required remittance is a document-stamping cost, which the selected candidate covers before the offer is countersigned.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT032",
+      "pattern": "equipment_reimbursement",
+      "message": "To receive the remote workstation, transfer the shipping insurance to the courier account listed in the onboarding note; payroll adds it back later.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT033",
+      "pattern": "refundable_deposit",
+      "message": "The cohort coordinator collects a refundable seat hold from each finalist. We release it after orientation attendance is recorded.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT034",
+      "pattern": "training_purchase",
+      "message": "Your interview is complete. A mandatory two-day bootcamp fee is due tonight before the company can activate your internship agreement.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "broad benign-context or severity-zero override suppresses model-only risk",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned LOW. Rule path: broad benign-context or severity-zero override suppresses model-only risk."
+    },
+    {
+      "id": "RT035",
+      "pattern": "third_party_payment",
+      "message": "The payroll desk cannot open your file until the verification agency receives its small clearance payment. I can forward the QR code if you are ready.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT036",
+      "pattern": "fee_disguised_as_admin",
+      "message": "No fee is charged for applying. After selection, candidates pay for a stamped appointment letter and the amount is not refundable if they withdraw.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "broad benign-context or severity-zero override suppresses model-only risk",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned LOW. Rule path: broad benign-context or severity-zero override suppresses model-only risk."
+    },
+    {
+      "id": "RT037",
+      "pattern": "equipment_reimbursement",
+      "message": "Our supplier is running low on monitors. Order the designated model today and we will add the cost to your first paycheck after you join.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [
+        {
+          "category": "Artificial urgency",
+          "severity": 1,
+          "evidence": "today",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+        }
+      ],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "MEDIUM",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "one active caution signal",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned MEDIUM. Rule path: one active caution signal."
+    },
+    {
+      "id": "RT038",
+      "pattern": "refundable_deposit",
+      "message": "The security amount is held by our placement desk, not the employer. It comes back once you finish the first week, provided you pay before close of business.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT039",
+      "pattern": "training_purchase",
+      "message": "Candidates who lack our proprietary course badge must pay the trainer directly. The badge is needed before your application can be marked successful.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT040",
+      "pattern": "third_party_payment",
+      "message": "A background partner requires a refundable screening remittance from every remote hire. Use the account details in my next message so we can issue your contract.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT041",
+      "pattern": "fee_disguised_as_admin",
+      "message": "The company has waived the application fee, but an onboarding activation charge is still collected from the incoming intern before the first day.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT042",
+      "pattern": "equipment_reimbursement",
+      "message": "For asset tracking, buy a prepaid device card and give me its redemption code; our accounts team will reimburse the value with your joining bonus.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT044",
+      "pattern": "third_party_payment",
+      "message": "A courier has your employment kit but needs a customs release payment from the recipient. Settle it through this payment link and send the confirmation to HR.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT045",
+      "pattern": "fee_disguised_as_admin",
+      "message": "The interview panel has approved you. Please cover the notary and file-opening expenses now; finance will reconcile them after your first payslip.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "broad benign-context or severity-zero override suppresses model-only risk",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: broad benign-context or severity-zero override suppresses model-only risk."
+    },
+    {
+      "id": "RT046",
+      "pattern": "training_purchase",
+      "message": "We partner with a licensed exam center. Pay for the assessment token before the final round; the interviewer can only see results from paid attempts.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT047",
+      "pattern": "equipment_reimbursement",
+      "message": "Our finance rules require new hires to purchase a digital signature certificate from the coordinator. It is the last step before your offer can be released.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT048",
+      "pattern": "refundable_deposit",
+      "message": "The internship has no tuition. A refundable lab-access deposit is due to the supervisor before you can receive the campus entry pass.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "no active signal and model predicted LOW",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: no active signal and model predicted LOW."
+    },
+    {
+      "id": "RT049",
+      "pattern": "third_party_payment",
+      "message": "The agency that sourced your profile charges a success administration amount after selection. Pay its invoice first; the employer will not process your contract otherwise.",
+      "expected_label": "HIGH",
+      "ml_prediction": "HIGH",
+      "contextual_signals": [],
+      "benign_context_detected": false,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "MEDIUM",
+      "aggregation_rule": "unsupported model HIGH is softened to MEDIUM",
+      "why_different_from_expected": "Expected HIGH, but ML predicted HIGH and contextual aggregation returned MEDIUM. Rule path: unsupported model HIGH is softened to MEDIUM."
+    },
+    {
+      "id": "RT050",
+      "pattern": "fee_disguised_as_admin",
+      "message": "You do not need to pay to interview. If selected, however, the compliance certificate and courier package are billed together before joining.",
+      "expected_label": "HIGH",
+      "ml_prediction": "LOW",
+      "contextual_signals": [],
+      "benign_context_detected": true,
+      "context_only_risk_before_combination": "LOW",
+      "hybrid_risk_after_aggregation": "LOW",
+      "aggregation_rule": "broad benign-context or severity-zero override suppresses model-only risk",
+      "why_different_from_expected": "Expected HIGH, but ML predicted LOW and contextual aggregation returned LOW. Rule path: broad benign-context or severity-zero override suppresses model-only risk."
+    }
+  ]
+}

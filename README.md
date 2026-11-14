@@ -128,6 +128,35 @@ HIGH            0      5    10
 
 The separate validation set scored 30/30 after the rules were adjusted. That is a small rule-check set and is not a generalization estimate. All measurements use synthetic text; neither set establishes real-world detection accuracy. The original held-out test remains unchanged and is not used for tuning.
 
+## Phase 6A red-team evaluation
+
+Run `python scripts\evaluate_redteam.py` from `backend`. The independent, synthetic 100-message corpus and full per-example report are saved in `data/redteam/messages.csv` and `data/redteam/results.json`. The evaluator verifies the corpus has 25 examples in each requested scenario category, checks for internal and cross-dataset exact/near duplicates, loads the existing trained artifact without fitting, and calls both the classifier and the complete `/api/analyze/message` pipeline. It does not alter rules, thresholds, or any previous dataset. Per-example results include the label rationale and API finding explanations.
+
+The corpus has 25 identity-harvesting attempts, 25 indirect financial scams, 25 legitimate-but-suspicious messages, and 25 ambiguous messages. Five isolated early-stage identity-document requests are labeled MEDIUM, matching the current detector's own stated risk semantics; the remaining identity attacks and all financial scams are HIGH. Label supports are LOW 25, MEDIUM 30, HIGH 45.
+
+| Metric | Classifier only | Complete API pipeline |
+|---|---:|---:|
+| Accuracy | 0.650 | 0.450 |
+| Macro precision | 0.722 | 0.537 |
+| Macro recall | 0.665 | 0.521 |
+| Macro F1 | 0.652 | 0.433 |
+| Risk-screen false-positive rate | 0.160 | 0.160 |
+| Risk-screen false-negative rate | 0.347 | 0.360 |
+
+Confusion matrices (rows actual, columns predicted; order LOW, MEDIUM, HIGH):
+
+```text
+Classifier:                 API pipeline:
+             LOW MED HIGH                LOW MED HIGH
+LOW           21   0   4    LOW           21   4   0
+MEDIUM        10  16   4    MEDIUM        11  17   2
+HIGH          16   1  28    HIGH          16  22   7
+```
+
+The largest API miss patterns were indirect training purchases (4 LOW), refundable deposits and relabeled administration charges (3 LOW each), then credential requests and equipment-reimbursement schemes (2 LOW each). In addition, the API downgraded 38 of 45 HIGH examples to MEDIUM or LOW, especially equipment reimbursement, third-party payments, training purchases, and relabeled fees. Four legitimate messages were risk-positive: three involved post-offer ID steps and one payroll setup. The classifier also generated four false alarms, including a legitimate interview scheduling message. Full pattern counts and individual examples are in `results.json`.
+
+This is a deliberately difficult synthetic challenge set, not a real-world accuracy estimate. The classifier and API share the same saved model; the comparison isolates the effect of contextual decisions. The API test client’s local rate-limit state is cleared between examples so rate controls do not distort detector metrics.
+
 ## Tests and build
 
 With the backend virtual environment active:
@@ -164,3 +193,70 @@ The API rejects blank messages, unexpected JSON fields, malformed JSON, and mess
 ## PDF analysis demonstration
 
 Start the backend and frontend using the commands above, open `http://localhost:3000`, then choose **Upload PDF** and select a text-based synthetic offer letter. A safe internship offer should produce a LOW review; a document requesting a registration fee, identity documents with bank details, or an OTP/password should show the corresponding findings and recommended actions. The result includes extraction metadata and page references when the evidence maps to a page. Try an image-only PDF to see the explicit unsupported-document message. No PDF is saved by the API.
+
+## Phase 6B hybrid decision repair
+
+Run `python scripts\evaluate_phase6.py --tag after` from `backend` to evaluate the unchanged trained classifier and current API rules on the original held-out set, Phase 3 challenge set, and independent red-team set. The red-team corpus is never used to train or tune the model or thresholds. Baseline reports and all 38 individual pre-fix HIGH downgrade traces are preserved in `data/redteam/phase6_before.json`; post-fix results are in `data/redteam/phase6_after.json`. `data/redteam/messages.csv` remains unchanged. The changes are limited to risk aggregation and contextual pattern detection.
+
+The prior aggregator let broad routine context (such as an interview or resume mention) weaken an unsupported model HIGH result, capped identity-only findings at MEDIUM even when the message also contained coercion or unsafe channels, and had narrow fee/equipment patterns. Costs and reimbursement promises split across sentences, third-party remittances, and “keep this between us” tactics were missed. The revised engine gives direct OTP/password requests and explicit candidate-paid expenses HIGH treatment; it escalates identity requests when paired with pressure, secrecy, unusual selection, another sensitive request, or an unresolved cost. It also scopes safety negation to the relevant sentence, avoids counting training/awareness warnings as live asks, and recognizes pronoun-based negation and routine assessment/scheduling counterexamples.
+
+No model was retrained. Values below are actual results from the saved before/after reports. Confusion matrices use actual rows and predicted columns in LOW, MEDIUM, HIGH order. FPR/FNR treat MEDIUM and HIGH as risk-positive and LOW as negative. Per-class values are precision / recall / F1.
+
+| Corpus | Version | Accuracy | Macro P / R / F1 | Risk FPR / FNR | HIGH downgraded | Legitimate LOW → HIGH |
+|---|---|---:|---|---|---:|---:|
+| Original held-out (60) | Before | 0.733 | 0.762 / 0.733 / 0.737 | 0.150 / 0.125 | 7 | 0 |
+| Original held-out (60) | After | 0.800 | 0.806 / 0.800 / 0.802 | 0.150 / 0.050 | 4 | 0 |
+| Phase 3 challenge (60) | Before | 0.817 | 0.814 / 0.789 / 0.792 | 0.100 / 0.100 | 5 | 1 |
+| Phase 3 challenge (60) | After | 0.850 | 0.866 / 0.844 / 0.838 | 0.133 / 0.033 | 4 | 0 |
+| Independent red-team (100) | Before | 0.450 | 0.537 / 0.521 / 0.433 | 0.160 / 0.360 | 38 | 0 |
+| Independent red-team (100) | After | 0.820 | 0.802 / 0.789 / 0.789 | 0.200 / 0.080 | 0 | 0 |
+
+### Original held-out per-class P / R / F1
+
+| Version | LOW | MEDIUM | HIGH |
+|---|---|---|---|
+| Before | 0.89 / 0.85 / 0.81 | 0.58 / 0.70 / 0.64 | 0.93 / 0.65 / 0.76 |
+| After | 0.89 / 0.85 / 0.87 | 0.68 / 0.75 / 0.71 | 0.84 / 0.80 / 0.82 |
+
+```text
+Original held-out before       Original held-out after
+             pred                          pred
+actual   LOW MED HIGH          actual   LOW MED HIGH
+LOW       17   3    0          LOW       17   3    0
+MEDIUM     5  14    1          MEDIUM     2  15    3
+HIGH       0   7   13          HIGH       0   4   16
+```
+
+### Phase 3 challenge per-class P / R / F1
+
+| Version | LOW | MEDIUM | HIGH |
+|---|---|---|---|
+| Before | 0.90 / 0.90 / 0.90 | 0.63 / 0.80 / 0.71 | 0.91 / 0.67 / 0.77 |
+| After | 0.96 / 0.87 / 0.91 | 0.64 / 0.93 / 0.76 | 1.00 / 0.73 / 0.85 |
+
+```text
+Phase 3 before                 Phase 3 after
+             pred                          pred
+actual   LOW MED HIGH          actual   LOW MED HIGH
+LOW       27   2    1          LOW       26   4    0
+MEDIUM     3  12    0          MEDIUM     1  14    0
+HIGH       0   5   10          HIGH       0   4   11
+```
+
+### Independent red-team per-class P / R / F1
+
+| Version | LOW | MEDIUM | HIGH |
+|---|---|---|---|
+| Before | 0.44 / 0.84 / 0.58 | 0.40 / 0.57 / 0.47 | 0.78 / 0.16 / 0.26 |
+| After | 0.77 / 0.80 / 0.78 | 0.77 / 0.57 / 0.65 | 0.87 / 1.00 / 0.93 |
+
+```text
+Red-team before                Red-team after
+             pred                          pred
+actual   LOW MED HIGH          actual   LOW MED HIGH
+LOW       21   4    0          LOW       20   5    0
+MEDIUM    11  17    2          MEDIUM     6  17    7
+HIGH      16  22    7          HIGH       0   0   45
+```
+
+The three-class gains are largest on the deliberately selected red-team patterns, while five legitimate red-team cases move from LOW to MEDIUM, increasing the binary false-positive rate by four percentage points. No LOW-labeled example in the three corpora is now rated HIGH, and all 45 HIGH-labeled red-team cases are rated HIGH. Four messages in the red-team fraud-category grouping remain below HIGH; this grouping also includes the early-stage identity cases labeled MEDIUM. These are residual cases that warrant review. This result is still limited to synthetic wording and is not a real-world accuracy claim. Per-case reports are available in `data/redteam/results.json` and `data/redteam/phase6_after.json`.

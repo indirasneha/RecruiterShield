@@ -53,26 +53,42 @@ def _quote_finding(signal: Signal) -> Finding:
 
 def _risk_from_hybrid(predicted: str, signals: list[Signal], benign_context: bool) -> RiskLevel:
     active = [signal for signal in signals if signal.severity > 0]
-    # Direct credential, money, or financial-detail requests outrank the model.
-    direct_danger = any(signal.severity == 2 and signal.category != "Identity document request" for signal in active)
+    categories = {signal.category for signal in active}
+    # Direct credential, candidate-payment, or financial-detail requests are
+    # dangerous even when the same message also mentions a normal interview.
+    direct_danger = bool(categories & {
+        "Password or one-time code request",
+        "Financial information request",
+        "Recruitment fee or deposit",
+        "Candidate-paid recruitment expense",
+    })
     if direct_danger:
         return RiskLevel.HIGH
-    # An early identity-document request is concerning; pressure or another
-    # independent signal raises it to HIGH. Secure post-offer requests are severity 0.
+    # Identity harvesting paired with coercion, secrecy, premature selection,
+    # another sensitive request, or an unresolved expense is high risk. Secure
+    # post-offer requests are severity zero and do not take this path.
     if any(signal.category == "Identity document request" for signal in active):
-        if len(active) >= 2:
+        corroborating = categories & {
+            "Financial information request", "Candidate-paid recruitment expense", "Unclear recruitment expense",
+            "Artificial urgency", "Offer cancellation pressure", "Secrecy or blocked verification",
+            "Unusual selection claim", "Password or one-time code request",
+        }
+        if corroborating or len(active) >= 2:
             return RiskLevel.HIGH
         return RiskLevel.MEDIUM
-    # Several weaker contextual signs together carry more weight than one alone.
+    # Separate caution signals together outweigh unrelated benign wording.
     if len(active) >= 2:
         return RiskLevel.HIGH
     if active:
         return RiskLevel.MEDIUM
-    # The text model alone can overread ordinary recruiting vocabulary. It may
-    # raise a grounded concern to MEDIUM, but cannot create an unsupported HIGH.
-    if benign_context or any(signal.severity == 0 for signal in signals):
+    # A safe post-offer document/payroll context can counter a model-only high
+    # prediction. Ordinary interview/resume words cannot erase an unsupported
+    # high prediction; that result is retained as MEDIUM pending verification.
+    if any(signal.severity == 0 for signal in signals) or (predicted == "HIGH" and benign_context):
         return RiskLevel.LOW
-    if predicted in {"MEDIUM", "HIGH"}:
+    if predicted == "HIGH":
+        return RiskLevel.MEDIUM
+    if predicted == "MEDIUM" and not benign_context:
         return RiskLevel.MEDIUM
     return RiskLevel.LOW
 
@@ -86,6 +102,10 @@ def _actions(risk: RiskLevel, signals: list[Signal]) -> list[str]:
         actions.append("Verify the job and recruiter independently; share identity documents only through a confirmed employer onboarding process.")
     if "Financial information request" in categories or "Recruitment fee or deposit" in categories:
         actions.append("Do not pay a recruitment fee or disclose financial details. Contact the employer using its official website's contact information.")
+    if "Candidate-paid recruitment expense" in categories:
+        actions.append("Do not buy equipment, training, vouchers, certificates, or pay deposits/administrative charges to secure a job. Verify any required expense with the employer through an independently found channel.")
+    if "Unclear recruitment expense" in categories:
+        actions.append("Ask whether any cost is payable by you and get the written policy from the employer through an independently verified channel before proceeding.")
     if "Password or one-time code request" in categories:
         actions.append("Never share a password or one-time code. If you already shared one, change the password and secure the affected account now.")
     if categories & {"Artificial urgency", "Offer cancellation pressure", "Secrecy or blocked verification", "Unusual selection claim"}:

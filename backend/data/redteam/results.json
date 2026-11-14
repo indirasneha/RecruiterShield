@@ -1,0 +1,2372 @@
+{
+  "dataset": "backend/data/redteam/messages.csv",
+  "dataset_size": 100,
+  "dataset_category_counts": {
+    "identity_harvesting": 25,
+    "indirect_financial_scam": 25,
+    "legitimate_suspicious": 25,
+    "ambiguous": 25
+  },
+  "true_label_counts": {
+    "MEDIUM": 30,
+    "HIGH": 45,
+    "LOW": 25
+  },
+  "training_or_tuning_performed": false,
+  "original_datasets_modified": false,
+  "model_artifact": "app\\ml\\artifacts\\recruitment_classifier.joblib",
+  "analysis_type_observed": [
+    "ai_hybrid"
+  ],
+  "label_order": [
+    "LOW",
+    "MEDIUM",
+    "HIGH"
+  ],
+  "classifier_only": {
+    "three_class": {
+      "accuracy": 0.65,
+      "macro_precision": 0.7219209196681037,
+      "macro_recall": 0.6651851851851852,
+      "macro_f1": 0.6518474739514929,
+      "labels_order": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "per_class": {
+        "LOW": {
+          "precision": 0.44680851063829785,
+          "recall": 0.84,
+          "f1": 0.5833333333333334,
+          "support": 25
+        },
+        "MEDIUM": {
+          "precision": 0.9411764705882353,
+          "recall": 0.5333333333333333,
+          "f1": 0.6808510638297872,
+          "support": 30
+        },
+        "HIGH": {
+          "precision": 0.7777777777777778,
+          "recall": 0.6222222222222222,
+          "f1": 0.691358024691358,
+          "support": 45
+        }
+      },
+      "confusion_matrix_rows_actual_columns_predicted": [
+        [
+          21,
+          0,
+          4
+        ],
+        [
+          10,
+          16,
+          4
+        ],
+        [
+          16,
+          1,
+          28
+        ]
+      ]
+    },
+    "binary_risk_screen": {
+      "positive_definition": "MEDIUM or HIGH risk; negative definition: LOW",
+      "false_positive_rate": 0.16,
+      "false_negative_rate": 0.3466666666666667,
+      "false_positives": 4,
+      "false_negatives": 26,
+      "confusion_matrix_rows_actual_negative_positive_columns_predicted_negative_positive": [
+        [
+          21,
+          4
+        ],
+        [
+          26,
+          49
+        ]
+      ]
+    }
+  },
+  "complete_api_pipeline": {
+    "three_class": {
+      "accuracy": 0.82,
+      "macro_precision": 0.8024475524475525,
+      "macro_recall": 0.7888888888888889,
+      "macro_f1": 0.7886649769609139,
+      "labels_order": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "per_class": {
+        "LOW": {
+          "precision": 0.7692307692307693,
+          "recall": 0.8,
+          "f1": 0.7843137254901961,
+          "support": 25
+        },
+        "MEDIUM": {
+          "precision": 0.7727272727272727,
+          "recall": 0.5666666666666667,
+          "f1": 0.6538461538461539,
+          "support": 30
+        },
+        "HIGH": {
+          "precision": 0.8653846153846154,
+          "recall": 1.0,
+          "f1": 0.9278350515463918,
+          "support": 45
+        }
+      },
+      "confusion_matrix_rows_actual_columns_predicted": [
+        [
+          20,
+          5,
+          0
+        ],
+        [
+          6,
+          17,
+          7
+        ],
+        [
+          0,
+          0,
+          45
+        ]
+      ]
+    },
+    "binary_risk_screen": {
+      "positive_definition": "MEDIUM or HIGH risk; negative definition: LOW",
+      "false_positive_rate": 0.2,
+      "false_negative_rate": 0.08,
+      "false_positives": 5,
+      "false_negatives": 6,
+      "confusion_matrix_rows_actual_negative_positive_columns_predicted_negative_positive": [
+        [
+          20,
+          5
+        ],
+        [
+          6,
+          69
+        ]
+      ]
+    }
+  },
+  "category_breakdown": {
+    "identity_harvesting": {
+      "examples": 25,
+      "api_predictions": {
+        "HIGH": 21,
+        "MEDIUM": 4
+      },
+      "api_correct": 24,
+      "classifier_predictions": {
+        "LOW": 6,
+        "MEDIUM": 3,
+        "HIGH": 16
+      },
+      "classifier_correct": 17
+    },
+    "indirect_financial_scam": {
+      "examples": 25,
+      "api_predictions": {
+        "HIGH": 25
+      },
+      "api_correct": 25,
+      "classifier_predictions": {
+        "LOW": 12,
+        "HIGH": 13
+      },
+      "classifier_correct": 13
+    },
+    "legitimate_suspicious": {
+      "examples": 25,
+      "api_predictions": {
+        "LOW": 20,
+        "MEDIUM": 5
+      },
+      "api_correct": 20,
+      "classifier_predictions": {
+        "LOW": 21,
+        "HIGH": 4
+      },
+      "classifier_correct": 21
+    },
+    "ambiguous": {
+      "examples": 25,
+      "api_predictions": {
+        "MEDIUM": 13,
+        "LOW": 6,
+        "HIGH": 6
+      },
+      "api_correct": 13,
+      "classifier_predictions": {
+        "LOW": 8,
+        "MEDIUM": 14,
+        "HIGH": 3
+      },
+      "classifier_correct": 14
+    }
+  },
+  "missed_scam_patterns": {
+    "classifier_only": [
+      {
+        "pattern": "training_purchase",
+        "count": 3
+      },
+      {
+        "pattern": "equipment_reimbursement",
+        "count": 3
+      },
+      {
+        "pattern": "refundable_deposit",
+        "count": 3
+      },
+      {
+        "pattern": "early_id_before_interview",
+        "count": 2
+      },
+      {
+        "pattern": "credential_harvest",
+        "count": 2
+      },
+      {
+        "pattern": "fee_disguised_as_admin",
+        "count": 2
+      },
+      {
+        "pattern": "identity_plus_pressure",
+        "count": 1
+      },
+      {
+        "pattern": "identity_plus_bank",
+        "count": 1
+      },
+      {
+        "pattern": "third_party_payment",
+        "count": 1
+      }
+    ],
+    "complete_api_pipeline": []
+  },
+  "high_risk_scam_undercall_patterns": {
+    "definition": "HIGH ground-truth examples predicted MEDIUM or LOW; these are class downgrades, not necessarily LOW-risk-screen false negatives.",
+    "classifier_only": [
+      {
+        "pattern": "credential_harvest",
+        "count": 3
+      },
+      {
+        "pattern": "training_purchase",
+        "count": 3
+      },
+      {
+        "pattern": "equipment_reimbursement",
+        "count": 3
+      },
+      {
+        "pattern": "refundable_deposit",
+        "count": 3
+      },
+      {
+        "pattern": "fee_disguised_as_admin",
+        "count": 2
+      },
+      {
+        "pattern": "identity_plus_pressure",
+        "count": 1
+      },
+      {
+        "pattern": "identity_plus_bank",
+        "count": 1
+      },
+      {
+        "pattern": "third_party_payment",
+        "count": 1
+      }
+    ],
+    "complete_api_pipeline": []
+  },
+  "legitimate_false_alarm_patterns": {
+    "classifier_only": [
+      {
+        "pattern": "legitimate_post_offer_id",
+        "count": 2
+      },
+      {
+        "pattern": "legitimate_payroll",
+        "count": 1
+      },
+      {
+        "pattern": "legitimate_interview_logistics",
+        "count": 1
+      }
+    ],
+    "complete_api_pipeline": [
+      {
+        "pattern": "legitimate_post_offer_id",
+        "count": 3
+      },
+      {
+        "pattern": "legitimate_payroll",
+        "count": 1
+      },
+      {
+        "pattern": "legitimate_interview_logistics",
+        "count": 1
+      }
+    ]
+  },
+  "examples": [
+    {
+      "id": "RT001",
+      "category": "identity_harvesting",
+      "pattern": "early_id_before_interview",
+      "text": "The panel is still deciding who to meet. Please send a clear scan of your Aadhaar today so we can reserve your place in the shortlist.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Government ID requested before an interview and tied to shortlist access.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“send a clear scan of your Aadhaar”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“today”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT002",
+      "category": "identity_harvesting",
+      "pattern": "early_id_before_interview",
+      "text": "Your portfolio looks promising. Our coordinator needs your PAN image to open the candidate file before the technical round can be arranged.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "PAN collection is made a prerequisite to scheduling an interview.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“needs your PAN”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+    },
+    {
+      "id": "RT003",
+      "category": "identity_harvesting",
+      "pattern": "early_id_before_interview",
+      "text": "For the first screening, attach a passport photo page and your date of birth to the reply. The vacancy details will follow once your profile is registered.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Passport image and personal details are demanded before the role is explained.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“attach a passport”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+    },
+    {
+      "id": "RT004",
+      "category": "identity_harvesting",
+      "pattern": "early_id_before_interview",
+      "text": "We have not booked the conversation yet, but compliance requires a driver's licence number and front-and-back image to move your application forward.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Identity document number and images are requested at a premature hiring stage.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“requires a driver's licence number”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+    },
+    {
+      "id": "RT005",
+      "category": "identity_harvesting",
+      "pattern": "early_id_before_interview",
+      "text": "To prepare a provisional badge, enter your national ID number on this candidate form before speaking with the hiring manager.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "National ID number is requested before any interview or established onboarding.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“enter your national ID number”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+    },
+    {
+      "id": "RT006",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_pressure",
+      "text": "A seat opened in the graduate cohort. Send your Aadhaar copy by 6 pm or the offer packet will be reassigned to the next applicant.",
+      "expected_label": "HIGH",
+      "expected_reason": "Identity request is paired with a coercive deadline and threatened loss of offer.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Send your Aadhaar”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“by 6 pm”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT007",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_secrecy",
+      "text": "The director has approved you directly. Keep this between us until Monday and message your PAN scan to my private number so HR does not slow the process.",
+      "expected_label": "HIGH",
+      "expected_reason": "PAN collection is combined with secrecy and avoidance of official HR.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“message your PAN”"
+        },
+        {
+          "category": "Secrecy or blocked verification",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.",
+          "evidence": "“Keep this between us until”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine."
+    },
+    {
+      "id": "RT008",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_pressure",
+      "text": "Your background check is almost complete; upload the passport page now. If the upload portal is inconvenient, reply with a photo and we will enter it for you.",
+      "expected_label": "HIGH",
+      "expected_reason": "Sensitive passport page is requested through an unsafe fallback channel.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“upload the passport”"
+        },
+        {
+          "category": "Secrecy or blocked verification",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.",
+          "evidence": "“reply with a photo”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine."
+    },
+    {
+      "id": "RT009",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_secrecy",
+      "text": "The hiring list is confidential. Send your tax identification number here and please do not call the company switchboard while approvals are pending.",
+      "expected_label": "HIGH",
+      "expected_reason": "Tax ID request is paired with blocked independent verification.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Send your tax identification number”"
+        },
+        {
+          "category": "Secrecy or blocked verification",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.",
+          "evidence": "“please do not call the company”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine."
+    },
+    {
+      "id": "RT010",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_pressure",
+      "text": "We can hold the placement through tonight only. A picture of your government ID is needed to keep your name active in the system.",
+      "expected_label": "HIGH",
+      "expected_reason": "Identity document is used as leverage to manufacture urgency.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“government ID is needed”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“through tonight”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT011",
+      "category": "identity_harvesting",
+      "pattern": "credential_harvest",
+      "text": "The candidate portal sent a login code to your phone. Read the six digits back so I can connect your assessment to the correct application.",
+      "expected_label": "HIGH",
+      "expected_reason": "One-time login code is requested under a plausible administrative pretext.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“Read the six digits”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT012",
+      "category": "identity_harvesting",
+      "pattern": "credential_harvest",
+      "text": "I am reconciling the interview calendar. Please send the password you created for the careers page and I will check whether your application is complete.",
+      "expected_label": "HIGH",
+      "expected_reason": "Recruiter asks for the applicant's account password.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“send the password”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT013",
+      "category": "identity_harvesting",
+      "pattern": "credential_harvest",
+      "text": "A secure sign-in prompt may arrive while we verify your profile. Forward the verification code as soon as it appears; it expires quickly.",
+      "expected_label": "HIGH",
+      "expected_reason": "A time-sensitive verification code is solicited.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“Forward the verification code”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT014",
+      "category": "identity_harvesting",
+      "pattern": "credential_harvest",
+      "text": "To release the video interview room, reply with the number from your authenticator app. It only confirms that you are the candidate.",
+      "expected_label": "HIGH",
+      "expected_reason": "Authenticator code is solicited to gain access to an account.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“reply with the number from your authenticator app”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT015",
+      "category": "identity_harvesting",
+      "pattern": "credential_harvest",
+      "text": "The recruiter dashboard is locked after a system update. Share your account recovery code and I will restore your interview slot.",
+      "expected_label": "HIGH",
+      "expected_reason": "Recovery code request could enable account takeover.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“Share your account recovery code”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT016",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_bank",
+      "text": "Payroll setup starts before the written agreement in this program. Send your bank account details and PAN card to the onboarding contact on Signal.",
+      "expected_label": "HIGH",
+      "expected_reason": "Early financial and identity information harvesting through a private messaging channel.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Send your bank account details and PAN card”"
+        },
+        {
+          "category": "Financial information request",
+          "explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.",
+          "evidence": "“Send your bank account”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse."
+    },
+    {
+      "id": "RT017",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_bank",
+      "text": "The stipend vendor needs your account number and a scan of your tax card before the final interview; otherwise it cannot calculate your package.",
+      "expected_label": "HIGH",
+      "expected_reason": "Bank details and tax ID are requested before selection is complete.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“needs your account number and a scan of your tax card”"
+        },
+        {
+          "category": "Financial information request",
+          "explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.",
+          "evidence": "“needs your account number”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse."
+    },
+    {
+      "id": "RT018",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_bank",
+      "text": "We selected you from the application list. Email a void cheque, national ID image, and your full birth date to this personal mailbox for verification.",
+      "expected_label": "HIGH",
+      "expected_reason": "Multiple identity and financial documents are requested through an unverified mailbox.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Email a void cheque, national ID image”"
+        },
+        {
+          "category": "Financial information request",
+          "explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.",
+          "evidence": "“Email a void cheque”"
+        },
+        {
+          "category": "Secrecy or blocked verification",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.",
+          "evidence": "“personal mailbox”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.; Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine."
+    },
+    {
+      "id": "RT019",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_bank",
+      "text": "For a remote internship, upload an ID document and debit card information so the finance desk can activate your monthly allowance.",
+      "expected_label": "HIGH",
+      "expected_reason": "Identity and payment-card details are not needed to activate recruitment or a stipend.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Financial information request",
+          "explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.",
+          "evidence": "“upload an ID document and debit card”"
+        }
+      ],
+      "api_explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse."
+    },
+    {
+      "id": "RT020",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_bank",
+      "text": "The background partner cannot proceed without your passport number and bank routing details. Send them directly to me rather than using the company portal.",
+      "expected_label": "HIGH",
+      "expected_reason": "Sensitive identity and banking data are redirected away from an official system.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“cannot proceed without your passport”"
+        },
+        {
+          "category": "Financial information request",
+          "explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.",
+          "evidence": "“cannot proceed without your passport number and bank routing details”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse."
+    },
+    {
+      "id": "RT021",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_secrecy",
+      "text": "The CEO personally chose you, so there will be no usual interview. Text your Aadhaar number to this account and do not ask the careers team about the exception.",
+      "expected_label": "HIGH",
+      "expected_reason": "Unusual selection claim plus ID harvesting and blocked verification.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Text your Aadhaar”"
+        },
+        {
+          "category": "Secrecy or blocked verification",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.",
+          "evidence": "“do not ask the careers team”"
+        },
+        {
+          "category": "Unusual selection claim",
+          "explanation": "An unconditional selection claim without a normal interview or assessment deserves independent confirmation.",
+          "evidence": "“there will be no usual interview”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.; An unconditional selection claim without a normal interview or assessment deserves independent confirmation."
+    },
+    {
+      "id": "RT022",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_pressure",
+      "text": "Your assessment was excellent. To keep the appointment letter active, upload both sides of your PAN card before the countdown on the form reaches zero.",
+      "expected_label": "HIGH",
+      "expected_reason": "PAN scan is paired with artificial countdown pressure.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“upload both sides of your PAN card”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“countdown”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT023",
+      "category": "identity_harvesting",
+      "pattern": "credential_harvest",
+      "text": "The applicant profile needs a one-time bank confirmation. Tell me the OTP from your banking app and I will mark your payroll details as verified.",
+      "expected_label": "HIGH",
+      "expected_reason": "Bank OTP request can authorize account access or transactions.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“Tell me the OTP”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT024",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_secrecy",
+      "text": "We are using an outside verifier for a confidential search. Send your licence number and a selfie with the card; please keep the search off your public application record.",
+      "expected_label": "HIGH",
+      "expected_reason": "Identity document and selfie request is concealed from official records.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Send your licence number”"
+        },
+        {
+          "category": "Secrecy or blocked verification",
+          "explanation": "Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine.",
+          "evidence": "“keep the search off your public application record”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.; Discouraging contact with the company prevents you from checking whether the recruiter and offer are genuine."
+    },
+    {
+      "id": "RT025",
+      "category": "identity_harvesting",
+      "pattern": "identity_plus_bank",
+      "text": "Before we issue your contract, provide your account login name, password, and a recent statement so finance can confirm you are eligible for the role.",
+      "expected_label": "HIGH",
+      "expected_reason": "Credentials and bank statement are requested as a condition of employment.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“provide your account login name, password”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT026",
+      "category": "indirect_financial_scam",
+      "pattern": "training_purchase",
+      "text": "The position includes a required readiness module. Purchase the access voucher from our named training partner, then send the receipt to receive your start instructions.",
+      "expected_label": "HIGH",
+      "expected_reason": "Applicant must pay a third party to unlock the job.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The position includes a required readiness module. Purchase the access voucher from our named training partner, then send the receipt to receive your start instructions.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT027",
+      "category": "indirect_financial_scam",
+      "pattern": "equipment_reimbursement",
+      "text": "We ship laptops only after candidates buy the approved security suite from our supplier. Finance will reimburse it after your first month.",
+      "expected_label": "HIGH",
+      "expected_reason": "Upfront purchase from a named supplier is promised as reimbursement.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“We ship laptops only after candidates buy the approved security suite from our supplier. Finance will reimburse it after your first month.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT028",
+      "category": "indirect_financial_scam",
+      "pattern": "refundable_deposit",
+      "text": "Your desk is reserved once the refundable equipment bond clears. The amount returns with your first stipend, so there is no net cost to you.",
+      "expected_label": "HIGH",
+      "expected_reason": "Refundable framing does not change the demand for an upfront deposit.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“Your desk is reserved once the refundable equipment bond clears. The amount returns with your first stipend, so there is no net cost to you.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT029",
+      "category": "indirect_financial_scam",
+      "pattern": "training_purchase",
+      "text": "The internship is paid, though a short certification fee must be settled before the mentor can release the project brief.",
+      "expected_label": "HIGH",
+      "expected_reason": "Fee is imposed as a gate to a promised paid placement.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The internship is paid, though a short certification fee must be settled before the mentor can release the project brief.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT030",
+      "category": "indirect_financial_scam",
+      "pattern": "third_party_payment",
+      "text": "An external credentialing office handles our fast-track intake. Pay its candidate processing invoice directly; the hiring team cannot reserve your slot until it is marked paid.",
+      "expected_label": "HIGH",
+      "expected_reason": "Third-party processing charge is tied to access to hiring.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“An external credentialing office handles our fast-track intake. Pay its candidate processing invoice directly; the hiring team cannot reserve your slot until it is marked paid.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT031",
+      "category": "indirect_financial_scam",
+      "pattern": "fee_disguised_as_admin",
+      "text": "There is no recruitment charge. The only required remittance is a document-stamping cost, which the selected candidate covers before the offer is countersigned.",
+      "expected_label": "HIGH",
+      "expected_reason": "Fee is relabeled as a document cost but remains a hiring prerequisite.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“There is no recruitment charge. The only required remittance is a document-stamping cost, which the selected candidate covers before the offer is countersigned.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT032",
+      "category": "indirect_financial_scam",
+      "pattern": "equipment_reimbursement",
+      "text": "To receive the remote workstation, transfer the shipping insurance to the courier account listed in the onboarding note; payroll adds it back later.",
+      "expected_label": "HIGH",
+      "expected_reason": "Candidate is asked to advance shipping money to an unverified account.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“To receive the remote workstation, transfer the shipping insurance to the courier account listed in the onboarding note; payroll adds it back later.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT033",
+      "category": "indirect_financial_scam",
+      "pattern": "refundable_deposit",
+      "text": "The cohort coordinator collects a refundable seat hold from each finalist. We release it after orientation attendance is recorded.",
+      "expected_label": "HIGH",
+      "expected_reason": "A seat-hold payment is demanded before the candidate starts.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The cohort coordinator collects a refundable seat hold from each finalist. We release it after orientation attendance is recorded.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT034",
+      "category": "indirect_financial_scam",
+      "pattern": "training_purchase",
+      "text": "Your interview is complete. A mandatory two-day bootcamp fee is due tonight before the company can activate your internship agreement.",
+      "expected_label": "HIGH",
+      "expected_reason": "Training fee is demanded under urgency after a claimed selection.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“Your interview is complete. A mandatory two-day bootcamp fee is due tonight before the company can activate your internship agreement.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT035",
+      "category": "indirect_financial_scam",
+      "pattern": "third_party_payment",
+      "text": "The payroll desk cannot open your file until the verification agency receives its small clearance payment. I can forward the QR code if you are ready.",
+      "expected_label": "HIGH",
+      "expected_reason": "A purported payroll verification fee is demanded to continue onboarding.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The payroll desk cannot open your file until the verification agency receives its small clearance payment. I can forward the QR code if you are ready.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT036",
+      "category": "indirect_financial_scam",
+      "pattern": "fee_disguised_as_admin",
+      "text": "No fee is charged for applying. After selection, candidates pay for a stamped appointment letter and the amount is not refundable if they withdraw.",
+      "expected_label": "HIGH",
+      "expected_reason": "The offer letter itself is sold to the candidate.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“No fee is charged for applying. After selection, candidates pay for a stamped appointment letter and the amount is not refundable if they withdraw.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT037",
+      "category": "indirect_financial_scam",
+      "pattern": "equipment_reimbursement",
+      "text": "Our supplier is running low on monitors. Order the designated model today and we will add the cost to your first paycheck after you join.",
+      "expected_label": "HIGH",
+      "expected_reason": "Candidate must buy equipment from a designated vendor for a reimbursement promise.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“Our supplier is running low on monitors. Order the designated model today and we will add the cost to your first paycheck after you join.”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“today”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT038",
+      "category": "indirect_financial_scam",
+      "pattern": "refundable_deposit",
+      "text": "The security amount is held by our placement desk, not the employer. It comes back once you finish the first week, provided you pay before close of business.",
+      "expected_label": "HIGH",
+      "expected_reason": "Upfront deposit paid to a placement desk with a conditional refund.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The security amount is held by our placement desk, not the employer. It comes back once you finish the first week, provided you pay before close of business.”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“before close of business”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT039",
+      "category": "indirect_financial_scam",
+      "pattern": "training_purchase",
+      "text": "Candidates who lack our proprietary course badge must pay the trainer directly. The badge is needed before your application can be marked successful.",
+      "expected_label": "HIGH",
+      "expected_reason": "Paid credential is presented as a condition to qualify for the job.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“Candidates who lack our proprietary course badge must pay the trainer directly. The badge is needed before your application can be marked successful.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT040",
+      "category": "indirect_financial_scam",
+      "pattern": "third_party_payment",
+      "text": "A background partner requires a refundable screening remittance from every remote hire. Use the account details in my next message so we can issue your contract.",
+      "expected_label": "HIGH",
+      "expected_reason": "Candidate is told to transfer money to an intermediary to receive a contract.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“A background partner requires a refundable screening remittance from every remote hire. Use the account details in my next message so we can issue your contract.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT041",
+      "category": "indirect_financial_scam",
+      "pattern": "fee_disguised_as_admin",
+      "text": "The company has waived the application fee, but an onboarding activation charge is still collected from the incoming intern before the first day.",
+      "expected_label": "HIGH",
+      "expected_reason": "The fee is renamed as activation but is still charged to a job seeker.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The company has waived the application fee, but an onboarding activation charge is still collected from the incoming intern before the first day.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT042",
+      "category": "indirect_financial_scam",
+      "pattern": "equipment_reimbursement",
+      "text": "For asset tracking, buy a prepaid device card and give me its redemption code; our accounts team will reimburse the value with your joining bonus.",
+      "expected_label": "HIGH",
+      "expected_reason": "Gift-card purchase and code transfer enable immediate theft.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“For asset tracking, buy a prepaid device card and give me its redemption code; our accounts team will reimburse the value with your joining bonus.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT043",
+      "category": "indirect_financial_scam",
+      "pattern": "refundable_deposit",
+      "text": "We can reserve the accommodation near the office if you send a refundable booking deposit to the recruiter today. Housing is mandatory for the placement.",
+      "expected_label": "HIGH",
+      "expected_reason": "Personal transfer to a recruiter is made a condition of the role.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Recruitment fee or deposit",
+          "explanation": "Legitimate employers generally do not require candidates to pay to apply, interview, or receive an offer.",
+          "evidence": "“send a refundable booking deposit”"
+        },
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“We can reserve the accommodation near the office if you send a refundable booking deposit to the recruiter today. Housing is mandatory for the placement.”"
+        },
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“today”"
+        }
+      ],
+      "api_explanation": "Legitimate employers generally do not require candidates to pay to apply, interview, or receive an offer.; A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.; Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT044",
+      "category": "indirect_financial_scam",
+      "pattern": "third_party_payment",
+      "text": "A courier has your employment kit but needs a customs release payment from the recipient. Settle it through this payment link and send the confirmation to HR.",
+      "expected_label": "HIGH",
+      "expected_reason": "A fabricated courier charge is used to extract payment.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“A courier has your employment kit but needs a customs release payment from the recipient. Settle it through this payment link and send the confirmation to HR.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT045",
+      "category": "indirect_financial_scam",
+      "pattern": "fee_disguised_as_admin",
+      "text": "The interview panel has approved you. Please cover the notary and file-opening expenses now; finance will reconcile them after your first payslip.",
+      "expected_label": "HIGH",
+      "expected_reason": "Miscellaneous administrative costs are charged upfront with a reimbursement promise.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The interview panel has approved you. Please cover the notary and file-opening expenses now; finance will reconcile them after your first payslip.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT046",
+      "category": "indirect_financial_scam",
+      "pattern": "training_purchase",
+      "text": "We partner with a licensed exam center. Pay for the assessment token before the final round; the interviewer can only see results from paid attempts.",
+      "expected_label": "HIGH",
+      "expected_reason": "Candidate is charged for access to a required assessment.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“We partner with a licensed exam center. Pay for the assessment token before the final round; the interviewer can only see results from paid attempts.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT047",
+      "category": "indirect_financial_scam",
+      "pattern": "equipment_reimbursement",
+      "text": "Our finance rules require new hires to purchase a digital signature certificate from the coordinator. It is the last step before your offer can be released.",
+      "expected_label": "HIGH",
+      "expected_reason": "A paid certificate is used to gate offer release.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“Our finance rules require new hires to purchase a digital signature certificate from the coordinator. It is the last step before your offer can be released.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT048",
+      "category": "indirect_financial_scam",
+      "pattern": "refundable_deposit",
+      "text": "The internship has no tuition. A refundable lab-access deposit is due to the supervisor before you can receive the campus entry pass.",
+      "expected_label": "HIGH",
+      "expected_reason": "A deposit to a supposed supervisor is required for workplace access.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The internship has no tuition. A refundable lab-access deposit is due to the supervisor before you can receive the campus entry pass.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT049",
+      "category": "indirect_financial_scam",
+      "pattern": "third_party_payment",
+      "text": "The agency that sourced your profile charges a success administration amount after selection. Pay its invoice first; the employer will not process your contract otherwise.",
+      "expected_label": "HIGH",
+      "expected_reason": "Recruiter or sourcing agency charges a success fee to the candidate.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The agency that sourced your profile charges a success administration amount after selection. Pay its invoice first; the employer will not process your contract otherwise.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT050",
+      "category": "indirect_financial_scam",
+      "pattern": "fee_disguised_as_admin",
+      "text": "You do not need to pay to interview. If selected, however, the compliance certificate and courier package are billed together before joining.",
+      "expected_label": "HIGH",
+      "expected_reason": "Multiple relabeled charges remain required before joining.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“You do not need to pay to interview. If selected, however, the compliance certificate and courier package are billed together before joining.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT051",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_deadline",
+      "text": "Applications close at 5 pm Friday in the careers portal. If you need more time, the next graduate intake opens in September.",
+      "expected_label": "LOW",
+      "expected_reason": "A concrete published application deadline without pressure for money or sensitive data.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT052",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_interview_logistics",
+      "text": "The panel can meet Tuesday at 10 or Wednesday at 2. Please choose one by tomorrow so the coordinator can hold a room.",
+      "expected_label": "LOW",
+      "expected_reason": "A short scheduling deadline has a routine operational reason.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT053",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_resume_request",
+      "text": "Could you resend the resume as a PDF? The attachment in your application did not open, and a portfolio link is optional.",
+      "expected_label": "LOW",
+      "expected_reason": "A routine resume request asks for no identity or financial information.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT054",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_post_offer_id",
+      "text": "Your signed agreement is complete. Upload your identity document through the employee onboarding portal linked from the careers site you used to apply.",
+      "expected_label": "LOW",
+      "expected_reason": "Identity collection occurs after signing through an independently reachable official portal.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“Upload your identity document”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+    },
+    {
+      "id": "RT055",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_payroll",
+      "text": "Payroll setup begins after your start date is confirmed. The employee portal will request account details directly; recruiting will not ask you to send them by email.",
+      "expected_label": "LOW",
+      "expected_reason": "Bank details are limited to normal post-offer payroll through an employee system.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT056",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_interview_logistics",
+      "text": "The hiring manager is travelling, so we need to move your call to Monday. Please confirm the new calendar invitation when convenient.",
+      "expected_label": "LOW",
+      "expected_reason": "An interview change is ordinary and not tied to sensitive requests.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT057",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_deadline",
+      "text": "The posting says applications submitted after 11:59 pm are not considered. You can review the role and submit materials through the company careers page.",
+      "expected_label": "LOW",
+      "expected_reason": "A posted closing time is transparent and points to an official channel.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT058",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_safety_notice",
+      "text": "For your protection, our recruiting staff will never ask for a password, a login code, or an application payment. Report anyone who does.",
+      "expected_label": "LOW",
+      "expected_reason": "The message warns against credential and fee requests rather than making them.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT059",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_resume_request",
+      "text": "Please bring a printed copy of your CV to the campus interview. We already have the version you submitted, so this is only for the panel's notes.",
+      "expected_label": "LOW",
+      "expected_reason": "A resume copy for an interview is low-risk and not an identity-document request.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT060",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_post_offer_id",
+      "text": "After you accept the written offer, our HR platform will ask for tax and payroll forms. You may verify the platform from the employer's public site first.",
+      "expected_label": "LOW",
+      "expected_reason": "Sensitive onboarding information follows offer acceptance and includes independent verification advice.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT061",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_interview_logistics",
+      "text": "The assessment link expires at 8 pm because the interview platform closes the session then. It contains no request for payment or account credentials.",
+      "expected_label": "LOW",
+      "expected_reason": "A time-limited link has a stated operational explanation and requests no secrets.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT062",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_deadline",
+      "text": "We are interviewing shortlisted applicants this week. Let us know by Wednesday if you want one of the remaining times; declining will not affect future applications.",
+      "expected_label": "LOW",
+      "expected_reason": "Availability deadline is related to interview capacity and is not coercive.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT063",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_post_offer_id",
+      "text": "Your background check starts only after written consent. The vendor will email you from the address listed on our official careers page, and there is no candidate fee.",
+      "expected_label": "LOW",
+      "expected_reason": "Post-selection check is consent-based and explicitly free.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT064",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_resume_request",
+      "text": "The design lead would like a link to two public work samples before the portfolio discussion. Please remove client-confidential material.",
+      "expected_label": "LOW",
+      "expected_reason": "A public portfolio request is normal and includes sensible privacy guidance.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT065",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_interview_logistics",
+      "text": "Could you confirm the interview time from the calendar invite? The room booking expires at noon, so we will release it if we do not hear back.",
+      "expected_label": "LOW",
+      "expected_reason": "Routine room booking explains a deadline without coercion.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT066",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_safety_notice",
+      "text": "We do not collect Aadhaar or PAN during interviews. If hired, document requests will appear after contract acceptance inside the employee portal.",
+      "expected_label": "LOW",
+      "expected_reason": "The message explicitly distinguishes interviewing from secure post-offer onboarding.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT067",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_deadline",
+      "text": "The internship listing will be removed when the application window closes next week. We cannot extend it individually, but you may apply to a later cohort.",
+      "expected_label": "LOW",
+      "expected_reason": "A firm deadline is described neutrally and without threats.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT068",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_resume_request",
+      "text": "The recruiting team has your resume. If you want, add a short note about the group project you mentioned; no other paperwork is needed for this call.",
+      "expected_label": "LOW",
+      "expected_reason": "Optional job-relevant context is requested",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT069",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_post_offer_id",
+      "text": "A tax form is required before the first payroll run. The portal is reachable from the employee sign-in page on our website, not from a message attachment.",
+      "expected_label": "LOW",
+      "expected_reason": "A stage-appropriate tax form uses the official employee route.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT070",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_interview_logistics",
+      "text": "The video interview starts promptly at 3 because the panel has another candidate after you. Please join a few minutes early if possible.",
+      "expected_label": "LOW",
+      "expected_reason": "A schedule constraint is ordinary and carries no threat or sensitive request.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT071",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_safety_notice",
+      "text": "If you receive an unexpected fee request, do not pay it. Contact our recruiting office through the company directory and include the vacancy reference.",
+      "expected_label": "LOW",
+      "expected_reason": "Anti-fraud advice directs candidates to independently sourced contact information.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT072",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_resume_request",
+      "text": "Your application lists two different graduation dates. Could you clarify which one is correct before the hiring panel reviews your CV?",
+      "expected_label": "LOW",
+      "expected_reason": "Clarification of application information is relevant and not identity harvesting.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT073",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_deadline",
+      "text": "We plan to finish first-round interviews by the end of the month. This is an estimate, and you do not need to respond unless you want to withdraw.",
+      "expected_label": "LOW",
+      "expected_reason": "A process timeline is not artificial urgency.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT074",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_post_offer_id",
+      "text": "The offer includes a secure payroll enrollment step after your signed contract. You can call the HR number on the public website if you want confirmation first.",
+      "expected_label": "LOW",
+      "expected_reason": "Post-offer payroll is routed through a secure step and verifiable contact.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT075",
+      "category": "legitimate_suspicious",
+      "pattern": "legitimate_interview_logistics",
+      "text": "Please check in at the reception desk with the visitor pass issued by campus security. The pass does not require a document scan or payment.",
+      "expected_label": "LOW",
+      "expected_reason": "An in-person logistics instruction contains an explicit boundary against sensitive requests.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT076",
+      "category": "ambiguous",
+      "pattern": "ambiguous_fast_selection",
+      "text": "The team reviewed your profile this morning and would like to discuss a likely placement. We have not arranged interviews yet; can you confirm interest today?",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Selection appears unusually fast and asks for same-day confirmation without a sensitive request.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“today”"
+        }
+      ],
+      "api_explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT077",
+      "category": "ambiguous",
+      "pattern": "ambiguous_private_channel",
+      "text": "I am coordinating a confidential search and can share the employer name after a short chat on my personal messaging account. No documents are needed right now.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Personal channel and withheld employer details warrant verification",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Artificial urgency",
+          "explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud.",
+          "evidence": "“right now”"
+        }
+      ],
+      "api_explanation": "Pressure to act unusually quickly can prevent independent checks. A normal application deadline alone is not proof of fraud."
+    },
+    {
+      "id": "RT078",
+      "category": "ambiguous",
+      "pattern": "ambiguous_early_document",
+      "text": "The client wants to see identification before they decide whom to interview. Would you be comfortable discussing why they need it and how it will be stored?",
+      "expected_label": "MEDIUM",
+      "expected_reason": "An early ID request is concerning but phrased as a question with room to verify.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "LOW",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT079",
+      "category": "ambiguous",
+      "pattern": "ambiguous_cost_language",
+      "text": "There may be a certification expense for this role. I am checking whether the company or the candidate covers it and will send the written policy later.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Unclear cost language needs confirmation; no payment is demanded yet.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“There may be a certification expense for this role. I am checking whether the company or the candidate covers it and will send the written policy later.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT080",
+      "category": "ambiguous",
+      "pattern": "ambiguous_deadline",
+      "text": "The shortlist closes tonight, according to the coordinator. They only need to know whether you are still interested, but the public job page shows no closing date.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Deadline conflicts with public listing and needs independent confirmation.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "LOW",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT081",
+      "category": "ambiguous",
+      "pattern": "ambiguous_selection_claim",
+      "text": "A recruiter says the hiring manager has approved your profile without an interview and will explain the position after you accept a call tomorrow.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Premature approval claim and missing role detail deserve verification.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Unusual selection claim",
+          "explanation": "An unconditional selection claim without a normal interview or assessment deserves independent confirmation.",
+          "evidence": "“without an interview”"
+        }
+      ],
+      "api_explanation": "An unconditional selection claim without a normal interview or assessment deserves independent confirmation."
+    },
+    {
+      "id": "RT082",
+      "category": "ambiguous",
+      "pattern": "ambiguous_form",
+      "text": "Please complete this candidate information form before the screening. It asks for your address and birth date but does not appear to request an ID image or payment.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Personal details are requested early through an unverified form.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT083",
+      "category": "ambiguous",
+      "pattern": "ambiguous_payroll_stage",
+      "text": "The coordinator says finance needs bank details to estimate the stipend before the contract is ready. They have not shared the employee portal yet.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Bank details before a signed contract and official portal are stage-inappropriate.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Financial information request",
+          "explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse.",
+          "evidence": "“needs bank details”"
+        }
+      ],
+      "api_explanation": "Sharing bank or payment details with an unverified recruiter can expose funds and enable identity misuse."
+    },
+    {
+      "id": "RT084",
+      "category": "ambiguous",
+      "pattern": "ambiguous_link",
+      "text": "Your interview confirmation is in a shortened link sent by a recruiter whose company email domain differs by one character from the public careers site.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "A shortened link plus a domain mismatch merits verification before clicking.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "LOW",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT085",
+      "category": "ambiguous",
+      "pattern": "ambiguous_verification_delay",
+      "text": "The recruiter says the vacancy is not public yet because the team is reorganizing. They offered to send the job description after an introductory call.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Unpublished role and deferred details are uncertain but lack direct theft indicators.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT086",
+      "category": "ambiguous",
+      "pattern": "ambiguous_training",
+      "text": "The onboarding note mentions an optional course, then says candidates who take it may be considered for the next interview group. No fee amount or payment route is given.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Course language may imply pay-to-advance but lacks an explicit demand; verify policy.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "LOW",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT087",
+      "category": "ambiguous",
+      "pattern": "ambiguous_identity_stage",
+      "text": "After a verbal offer, the contact asks whether you can share a PAN image over email while the written contract is being prepared.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Identity collection after only a verbal offer and through email needs verification.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Identity document request",
+          "explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process.",
+          "evidence": "“share a PAN”"
+        }
+      ],
+      "api_explanation": "A recruiter is asking for a government identity document or number. Verify the employer independently and share identity documents only through a confirmed, secure onboarding process."
+    },
+    {
+      "id": "RT088",
+      "category": "ambiguous",
+      "pattern": "ambiguous_personal_email",
+      "text": "The calendar invitation came from a free email account. The sender says they are an external recruiter and provided a vacancy code but no company directory listing.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "A free email and absent official listing are concerning",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT089",
+      "category": "ambiguous",
+      "pattern": "ambiguous_admin_charge",
+      "text": "The offer summary says a small administration cost may apply to selected interns, but the recruiter has not said whether it is payable by candidates.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Potential candidate fee needs written clarification before proceeding.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The offer summary says a small administration cost may apply to selected interns, but the recruiter has not said whether it is payable by candidates.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT090",
+      "category": "ambiguous",
+      "pattern": "ambiguous_deadline",
+      "text": "The hiring contact asks for a decision by lunchtime because another finalist is waiting. They have not asked for money, documents, or account access.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Time pressure may be legitimate or coercive; confirm independently and take time.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT091",
+      "category": "ambiguous",
+      "pattern": "ambiguous_conflicting_details",
+      "text": "The PDF names one subsidiary while the recruiter message names the parent company. The role title matches, but the reporting team is not specified.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Employer naming difference may be benign but requires clarification.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT092",
+      "category": "ambiguous",
+      "pattern": "ambiguous_interview_access",
+      "text": "A recruiter asks you to install a meeting app from a file attachment because the usual calendar service is unavailable. They have not explained the software publisher.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Unverified software installation request introduces a device risk and needs checking.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT093",
+      "category": "ambiguous",
+      "pattern": "ambiguous_training",
+      "text": "The role description lists a paid induction week, while a follow-up says the induction schedule will be shared after a candidate orientation session. No explicit fee has been stated.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Inconsistent wording around induction costs should be resolved before acceptance.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "LOW",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT094",
+      "category": "ambiguous",
+      "pattern": "ambiguous_id_verification",
+      "text": "The recruiter says a background vendor needs an identity check before the final interview and offers to provide the vendor's name if asked.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Early ID verification should be confirmed with the employer and vendor first.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with high-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT095",
+      "category": "ambiguous",
+      "pattern": "ambiguous_secrecy",
+      "text": "Please avoid contacting the hiring manager until I finish arranging the panel. The sender says they are trying to prevent duplicate scheduling rather than hide the vacancy.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Request to avoid direct contact has a stated reason but blocks verification temporarily.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT096",
+      "category": "ambiguous",
+      "pattern": "ambiguous_payment",
+      "text": "The program brochure describes a refundable lab deposit, but the recruiter says they are unsure whether interns pay it and will ask operations.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "A possible deposit remains unresolved and should be confirmed in writing.",
+      "classifier_prediction": "HIGH",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“The program brochure describes a refundable lab deposit, but the recruiter says they are unsure whether interns pay it and will ask operations.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    },
+    {
+      "id": "RT097",
+      "category": "ambiguous",
+      "pattern": "ambiguous_account",
+      "text": "The candidate portal returned an error. The recruiter asked you to try again later and offered to check your status if you send the application reference, not your password.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "A portal issue and request for an application reference are worth checking but no credential is requested.",
+      "classifier_prediction": "LOW",
+      "classifier_correct": false,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Password or one-time code request",
+          "explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account.",
+          "evidence": "“send the application reference, not your password”"
+        }
+      ],
+      "api_explanation": "A legitimate recruiter should never need your password or one-time sign-in code; sharing it can hand over an account."
+    },
+    {
+      "id": "RT098",
+      "category": "ambiguous",
+      "pattern": "ambiguous_link",
+      "text": "The message asks you to review a role using a form hosted outside the employer's domain. The form requests a resume and availability but no identity documents.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Off-domain form for basic application data merits verifying its owner.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "LOW",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [],
+      "api_explanation": "No explicit contextual finding was returned; review the expected scenario rationale and verify independently."
+    },
+    {
+      "id": "RT099",
+      "category": "ambiguous",
+      "pattern": "ambiguous_selection_claim",
+      "text": "A contact says you are the preferred candidate after one short call and asks you to keep the news quiet until the offer is approved.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Fast selection and secrecy are suspicious contextual signals without a direct demand.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "MEDIUM",
+      "api_correct": true,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Overall message pattern",
+          "explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud.",
+          "evidence": "A wording pattern matched; review the submitted message in your browser."
+        }
+      ],
+      "api_explanation": "The learned text classifier matched wording patterns associated with medium-risk synthetic recruitment examples. Review the request carefully; this is not proof of fraud."
+    },
+    {
+      "id": "RT100",
+      "category": "ambiguous",
+      "pattern": "ambiguous_cost_language",
+      "text": "An email says the first month includes a training kit, but the attachment does not clarify whether it is supplied by the employer or purchased by the intern.",
+      "expected_label": "MEDIUM",
+      "expected_reason": "Unclear training-kit cost requires clarification before taking action.",
+      "classifier_prediction": "MEDIUM",
+      "classifier_correct": true,
+      "api_prediction": "HIGH",
+      "api_correct": false,
+      "api_analysis_type": "ai_hybrid",
+      "api_findings": [
+        {
+          "category": "Candidate-paid recruitment expense",
+          "explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
+          "evidence": "“An email says the first month includes a training kit, but the attachment does not clarify whether it is supplied by the employer or purchased by the intern.”"
+        }
+      ],
+      "api_explanation": "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first."
+    }
+  ],
+  "limitations": [
+    "All messages and labels are synthetic; these scores are not estimates of real-world performance.",
+    "The four scenario categories are balanced, but true risk labels are not class-balanced by design.",
+    "API decisions share the same saved classifier artifact as the classifier-only evaluation; only the contextual decision layer differs.",
+    "The local request throttle is cleared between TestClient requests so the report measures detection rather than per-client abuse controls."
+  ]
+}
