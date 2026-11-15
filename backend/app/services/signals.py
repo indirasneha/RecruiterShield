@@ -124,6 +124,37 @@ def _sentences(message: str) -> list[str]:
     return [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+|\n+", message) if sentence.strip()]
 
 
+def _candidate_expense_evidence(message: str, fallback_sentence: str) -> str:
+    """Return only the passage that connects a candidate cost to a payment action."""
+    item_pattern = re.compile(rf"\b(?:{PAYMENT_ITEMS})s?\b", re.I)
+    action_pattern = re.compile(
+        r"\b(?:pay|purchase|buy|order|transfer|send|remit|cover|settle|deposit|clear|bear|"
+        r"reimburse|collect|charge|require|due)\w*\b", re.I,
+    )
+    sentences = _sentences(message)
+
+    # Prefer one sentence that actually contains both the cost and the action.
+    direct = [sentence for sentence in sentences if item_pattern.search(sentence) and action_pattern.search(sentence)]
+    if direct:
+        return re.sub(r"\s+", " ", direct[0]).strip()[:180]
+
+    # If the charge and payment/reimbursement action are split, show just those
+    # neighboring sentences, not the introductory offer-letter prose.
+    pairs = [
+        (index, " ".join(sentences[index:index + 2]))
+        for index in range(len(sentences) - 1)
+        if (item_pattern.search(sentences[index]) and action_pattern.search(sentences[index + 1]))
+        or (action_pattern.search(sentences[index]) and item_pattern.search(sentences[index + 1]))
+    ]
+    if pairs:
+        _, passage = pairs[0]
+        return re.sub(r"\s+", " ", passage).strip()[:180]
+
+    # Preserve useful evidence if a future supported pattern matches a clause
+    # shape not covered above; never fall back to the whole document.
+    return re.sub(r"\s+", " ", fallback_sentence).strip()[:180]
+
+
 PAYMENT_ITEMS = (
     r"fee|fees|deposit|bond|charge|payment|remittance|invoice|cost|costs|expense|expenses|amount|"
     r"insurance|courier|shipping|customs|voucher|token|training|bootcamp|course|certification|"
@@ -188,7 +219,7 @@ def _candidate_expense_findings(message: str) -> list[Signal]:
             signals.append(Signal(
                 "Candidate-paid recruitment expense", 2,
                 "A payment, purchase, deposit, or reimbursable expense is tied to progressing in recruitment. Legitimate employers should not make candidates pay to receive or keep a job offer; verify independently and do not pay first.",
-                re.sub(r"\s+", " ", message).strip()[:180],
+                _candidate_expense_evidence(message, sentence),
             ))
         elif unclear_cost.search(sentence):
             signals.append(Signal(

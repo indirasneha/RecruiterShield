@@ -72,6 +72,29 @@ def test_fake_offer_registration_fee_is_high_and_page_aware():
     assert "registration fee" in fee["evidence"].casefold()
 
 
+def test_payment_finding_quotes_its_own_paragraph_in_multi_paragraph_offer():
+    pdf = make_text_pdf(
+        "Synthetic offer letter. We are pleased to offer you the Software Intern role at Example Studio.\n\n"
+        "To complete onboarding, pay INR 4,999 for the refundable training kit before the offer is issued.\n\n"
+        "The payment must arrive within 24 hours or this offer will expire."
+    )
+
+    response = upload(pdf)
+    assert response.status_code == 200
+    result = response.json()
+    assert result["risk_level"] == "HIGH"
+
+    payment = next(f for f in result["findings"] if f["category"] == "Candidate-paid recruitment expense")
+    urgency = next(f for f in result["findings"] if f["category"] == "Artificial urgency")
+
+    assert "4,999" in payment["evidence"]
+    assert "refundable training kit" in payment["evidence"].casefold()
+    assert "pleased to offer" not in payment["evidence"].casefold()
+    assert payment["page_number"] == 1
+    assert "within 24 hours" in urgency["evidence"].casefold()
+    assert urgency["page_number"] == 1
+
+
 def test_identity_and_bank_detail_harvesting_are_detected():
     pdf = make_text_pdf("Upload your Aadhaar and PAN documents and provide your bank account details before the interview.")
     result = upload(pdf).json()
